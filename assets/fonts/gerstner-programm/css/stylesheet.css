@@ -1,0 +1,195 @@
+/*
+ * Legal Disclaimer
+ *
+ * These Fonts are licensed only for use on these domains and their subdomains:
+ * www.noir-associates.com
+ *
+ * It is illegal to download or use them on other websites.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2017
+ */
+
+
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The fonts folder(s) should be placed relative to the regular CSS file.
+ *
+ * You can use either the complete or subsetted fonts:
+ * If you don’t require the entire range of characters, you can use the smaller, subsetted webfonts instead.
+ * See "Glyphs & Languages" for an overview of the characters in the corresponding html file in the root directory of this package.
+ *
+ */
+
+
+/* Complete */
+
+
+@font-face {
+    font-family: "GerstnerProgWebMedium";
+    src: url("fonts/GerstnerProgWeb-Medium.eot");
+    src: url("fonts/GerstnerProgWeb-Medium.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-Medium.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebBold";
+    src: url("fonts/GerstnerProgWeb-Bold.eot");
+    src: url("fonts/GerstnerProgWeb-Bold.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-Bold.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebBoldItalic";
+    src: url("fonts/GerstnerProgWeb-BoldItalic.eot");
+    src: url("fonts/GerstnerProgWeb-BoldItalic.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-BoldItalic.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-BoldItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebLightItalic";
+    src: url("fonts/GerstnerProgWeb-LightItalic.eot");
+    src: url("fonts/GerstnerProgWeb-LightItalic.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-LightItalic.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-LightItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebLight";
+    src: url("fonts/GerstnerProgWeb-Light.eot");
+    src: url("fonts/GerstnerProgWeb-Light.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-Light.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebMediumItalic";
+    src: url("fonts/GerstnerProgWeb-MediumItalic.eot");
+    src: url("fonts/GerstnerProgWeb-MediumItalic.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-MediumItalic.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-MediumItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebRegular";
+    src: url("fonts/GerstnerProgWeb-Regular.eot");
+    src: url("fonts/GerstnerProgWeb-Regular.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-Regular.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebItalic";
+    src: url("fonts/GerstnerProgWeb-Italic.eot");
+    src: url("fonts/GerstnerProgWeb-Italic.eot?#iefix") format("embedded-opentype"),
+         url("fonts/GerstnerProgWeb-Italic.woff2") format("woff2"),
+         url("fonts/GerstnerProgWeb-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Subsetted */
+
+
+@font-face {
+    font-family: "GerstnerProgSubBold";
+    src: url("fonts_subsetted/GerstnerProgSub-Bold.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-Bold.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-Bold.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubBoldItalic";
+    src: url("fonts_subsetted/GerstnerProgSub-BoldItalic.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-BoldItalic.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-BoldItalic.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-BoldItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubMedium";
+    src: url("fonts_subsetted/GerstnerProgSub-Medium.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-Medium.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-Medium.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubRegular";
+    src: url("fonts_subsetted/GerstnerProgSub-Regular.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-Regular.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-Regular.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubLightItalic";
+    src: url("fonts_subsetted/GerstnerProgSub-LightItalic.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-LightItalic.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-LightItalic.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-LightItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubItalic";
+    src: url("fonts_subsetted/GerstnerProgSub-Italic.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-Italic.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-Italic.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubLight";
+    src: url("fonts_subsetted/GerstnerProgSub-Light.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-Light.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-Light.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubMediumItalic";
+    src: url("fonts_subsetted/GerstnerProgSub-MediumItalic.eot");
+    src: url("fonts_subsetted/GerstnerProgSub-MediumItalic.eot?#iefix") format("embedded-opentype"),
+         url("fonts_subsetted/GerstnerProgSub-MediumItalic.woff2") format("woff2"),
+         url("fonts_subsetted/GerstnerProgSub-MediumItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

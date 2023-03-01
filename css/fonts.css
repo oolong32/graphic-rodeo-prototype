@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "GerstnerProgWebMedium";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Medium.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebBold";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Bold.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebBoldItalic";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-BoldItalic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-BoldItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebLightItalic";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-LightItalic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-LightItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebLight";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Light.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebMediumItalic";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-MediumItalic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-MediumItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebRegular";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Regular.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgWebItalic";
+    src: url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Italic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm/GerstnerProgWeb-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Subsetted */
+/*
+@font-face {
+    font-family: "GerstnerProgSubBold";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Bold.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubBoldItalic";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-BoldItalic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-BoldItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubMedium";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Medium.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubRegular";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Regular.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubLightItalic";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-LightItalic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-LightItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubItalic";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Italic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubLight";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Light.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GerstnerProgSubMediumItalic";
+    src: url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-MediumItalic.woff2") format("woff2"),
+         url("/assets/fonts/gerstner-programm_subsetted/GerstnerProgSub-MediumItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+*/
