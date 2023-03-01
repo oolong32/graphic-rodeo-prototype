@@ -9,6 +9,15 @@ window.addEventListener('load', (event) => {
   slider = document.getElementById('slider')
   sliderItems = document.querySelectorAll('.slider-item')
 
+  // adjust height of slider
+  const sliderItemsArr = [...sliderItems] // spread node into array
+  const sliderItemsHeights = sliderItemsArr.map((item) => {
+    return item.firstChild.offsetHeight // not the li, but the img in the li
+  })
+  const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
+  slider.setAttribute('style', `--slider-height: ${sliderHeight}px`)
+  document.body.setAttribute('style', `--slider-height: ${sliderHeight}px`)
+
   // scroll to center of slider
   slider.scrollBy(-slider.scrollLeftMax/2, 0)
   console.log(`scrolled by ${slider.scrollLeftMax/2}`)
