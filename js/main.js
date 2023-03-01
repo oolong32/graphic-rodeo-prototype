@@ -9,6 +9,10 @@ window.addEventListener('load', (event) => {
   slider = document.getElementById('slider')
   sliderItems = document.querySelectorAll('.slider-item')
 
+  // scroll to center of slider
+  slider.scrollBy(-slider.scrollLeftMax/2, 0)
+  console.log(`scrolled by ${slider.scrollLeftMax/2}`)
+
   // handle scroll event
   document.addEventListener('scroll', (event) => {
     // handle scroll data, when body is scrolled
@@ -27,7 +31,6 @@ window.addEventListener('load', (event) => {
     scrolled = scrolledAmount
 
     // get slider’s scrolled data
-    console.log(slider.scrollLeft)
     const sliderWidth = sliderItems.length * sliderItems[0].offsetWidth 
 
     // translate scroll to slider
@@ -51,7 +54,6 @@ window.addEventListener('load', (event) => {
 
   // disable scroll on slider
   slider.addEventListener('pointerenter', (event) => {
-    console.log(`pointer on slider 😱`)
     event.preventDefault()
   })
 }) // end load event listener

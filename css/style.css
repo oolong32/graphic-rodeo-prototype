@@ -70,16 +70,13 @@ em, i {
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
-  /* justify-content: center; */
-
-  /* scroll-snap-type: x mandatory; */
 }
 
 .slider-item {
-  border: 1px solid cornflowerblue;
   min-width: 50vw;
   display: inline-block;
   scroll-snap-align: center;
+  border-right: 1px solid black;
 }
 
 img { width: 100%; }
