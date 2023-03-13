@@ -10,12 +10,14 @@ window.addEventListener('load', (event) => {
   sliderItems = document.querySelectorAll('.slider-item')
 
   // adjust height of slider
+  // height comes from min-width in css
   const sliderItemsArr = [...sliderItems] // spread node into array
   const sliderItemsHeights = sliderItemsArr.map((item) => {
     return item.firstChild.offsetHeight // not the li, but the img in the li
   })
   const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
   slider.setAttribute('style', `--slider-height: ${sliderHeight}px`)
+  // und fürs padding
   document.body.setAttribute('style', `--slider-height: ${sliderHeight}px`)
 
   // scroll to center of slider

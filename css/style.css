@@ -1,13 +1,16 @@
 :root {
-  font-size: 100%;
+  font-size: 110%;
   line-height: 1.3;
   font-family: "GerstnerProgWebRegular";
+  --red: #cc3333;
+  --white: #fff;
+  --black: #333;
 }
 
 body {
-  background: black;
-  color: white;
-  padding: 0.5rem 1rem 50vh; /* fallback */
+  background: var(--black);
+  color: var(--white);
+  padding: 0.5rem 1rem 25vh; /* fallback */
   padding: 0.5rem 1rem var(--slider-height);
 }
 
@@ -18,7 +21,7 @@ header {
 
 header h1 {
   font-size: 2rem;
-  color: tomato;
+  color: var(--red);
   font-family: "GerstnerProgWebMedium";
 }
 
@@ -42,18 +45,34 @@ ul, ol {
   padding: 0;
 }
 
-h2, .uppercase {
+h2 {
+  font-family: "GerstnerProgWebMedium";
+  font-size: 0.75rem;
   text-transform: uppercase;
   font-feature-settings: 'cpsp' on, 'case' on;
+  border-top: var(--red) solid 1px;
+  margin-top: 1.5rem;
+  padding-top: 0.3rem;
+  letter-spacing: 0.05rem;
+  color: var(--white);
 }
 
-h2 {
-  letter-spacing: 0.0625rem;
-  color: tomato;
-}
+p, li { letter-spacing: 0.025rem; }
 
 em, i {
     font-family: "GerstnerProgWebItalic";
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--red);
+}
+
+footer, .small {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.05rem;
 }
 
 #examples {
@@ -67,19 +86,22 @@ em, i {
   margin: 0;
   position: fixed;
   bottom: 0;
-  height: 50vh; /* fallback */
+  left: 0;
+  height: 25vh; /* fallback */
   height: var(--slider-height);
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
+  border-top: 0.75rem solid var(--black);
 }
 
 .slider-item {
-  min-width: 50vw;
+  min-width: 40vw; /* bestimmt Höhe! */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-right: 1px solid black;
+  border-right: 0.75rem solid var(--black);
+  border-bottom: 0.75rem solid var(--black);
 }
 
 img { width: 100%; }
