@@ -93,6 +93,16 @@ footer, .small {
   overflow-x: hidden;
   display: flex;
   border-top: 0.75rem solid var(--black);
+  background: var(--black);
+}
+
+#separator-line {
+  position: fixed;
+  bottom: calc(var(--slider-height) + 10px);
+  left: 1rem; 
+  width: calc(100vw - 2rem);
+  border-top: solid 1px var(--white);
+
 }
 
 .slider-item {

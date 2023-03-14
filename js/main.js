@@ -5,6 +5,8 @@ let scrollingUp = false
 let scrollingDown = false
 
 window.addEventListener('load', (event) => {
+  // fires when all is loaded, including images
+ 
   // console.log("page is fully loaded")
   slider = document.getElementById('slider')
   sliderItems = document.querySelectorAll('.slider-item')
@@ -67,4 +69,6 @@ window.addEventListener('load', (event) => {
   slider.addEventListener('pointerenter', (event) => {
     event.preventDefault()
   })
+
 }) // end load event listener
+
