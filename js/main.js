@@ -6,6 +6,7 @@ let scrollingDown = false
 
 window.addEventListener('load', (event) => {
   // fires when all is loaded, including images
+  console.log('all loaded')
  
   // console.log("page is fully loaded")
   slider = document.getElementById('slider')
@@ -15,7 +16,7 @@ window.addEventListener('load', (event) => {
   // height comes from min-width in css
   const sliderItemsArr = [...sliderItems] // spread node into array
   const sliderItemsHeights = sliderItemsArr.map((item) => {
-    return item.firstChild.offsetHeight // not the li, but the img in the li
+    return item.querySelector('img').offsetHeight // not the li, but the img in the li
   })
   const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
   slider.setAttribute('style', `--slider-height: ${sliderHeight}px`)
