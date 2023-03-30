@@ -5,7 +5,7 @@
   text-rendering: optimizeLegibility;
   --red: #cc3333;
   --white: #fff;
-  --black: #333;
+  --black: #281e1e;
 }
 
 body {
@@ -30,7 +30,7 @@ header a { text-decoration: none; }
 
 a { color: unset; }
 
-.language-divider { margin: 0 0.875rem; }
+.active-language { display: none; }
 
 h1, h2, h3, h4, h5, h6,
 p, ul, ol, blockquote {
@@ -56,7 +56,7 @@ h2 {
   text-transform: uppercase;
   font-feature-settings: 'cpsp' on, 'case' on;
   border-top: var(--red) solid 1px;
-  margin-top: 2rem;
+  margin-top: 3.6rem;
   padding-top: 0.3rem;
   letter-spacing: 0.05rem;
   /* color: var(--white); */
@@ -72,7 +72,9 @@ em, i {
 .spaced-out { letter-spacing: 0.25rem; }
 .centered { text-align: center; }
 
-.lead, .partner-list li {
+.lead, .partner-list {
+  border-top: 1px solid var(--red);
+  padding-top: 1rem;
   font-size: 1.25rem;
   line-height: 1.2;
   color: var(--red);
