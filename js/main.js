@@ -16,6 +16,7 @@ window.addEventListener('load', (event) => {
   // height comes from min-width in css
   const sliderItemsArr = [...sliderItems] // spread node into array
   const sliderItemsHeights = sliderItemsArr.map((item) => {
+  console.log(item.querySelector('img').offsetHeight)
     return item.querySelector('img').offsetHeight // not the li, but the img in the li
   })
   const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
