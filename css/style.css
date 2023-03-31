@@ -16,20 +16,32 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  background: var(--black);
+  transition: 0.75s all 0.3s;
+  box-sizing: border-box;
+  padding-top: 0.5rem;
+  width: calc(100vw - 2rem);
   display: flex;
   justify-content: space-between;
 }
+
+.scrolling-up { top:  0; }
+.scrolling-down { top: -300px; }
 
 header h1 {
   font-size: 2rem;
   color: var(--red);
   font-family: "GerstnerProgWebMedium";
+  margin: 0;
 }
 
 header a { text-decoration: none; }
 
 a { color: unset; }
 
+#language-switch { text-align: right; }
 .active-language { display: none; }
 
 h1, h2, h3, h4, h5, h6,
@@ -78,6 +90,11 @@ em, i {
   font-size: 1.25rem;
   line-height: 1.2;
   color: var(--red);
+}
+
+h2 + .lead, h2 + .partner-list {
+ border-top: none;
+ padding-top: 0;
 }
 
 footer, .small {

@@ -1,3 +1,4 @@
+let header
 let slider
 let sliderItems
 let scrolled = 0
@@ -11,6 +12,10 @@ window.addEventListener('load', (event) => {
   // console.log("page is fully loaded")
   slider = document.getElementById('slider')
   sliderItems = document.querySelectorAll('.slider-item')
+  header = document.querySelector('header')
+
+  // header fixed, darum body-padding
+  document.body.style.paddingTop = `${8 + header.offsetHeight}px`
 
   // adjust height of slider
   // height comes from min-width in css
@@ -63,6 +68,16 @@ window.addEventListener('load', (event) => {
     }
     if (scrollingUp && slider.scrollLeft === 0) {
       slider.scrollBy(sliderWidth/2, 0)
+    }
+
+    // handle header visibility
+    if (scrollingDown) {
+      header.classList.remove('scrolling-up')
+      header.classList.add('scrolling-down')
+    }
+    if (scrollingUp) {
+      header.classList.remove('scrolling-down')
+      header.classList.add('scrolling-up')
     }
 
   }) // end scroll event listener
