@@ -15,7 +15,7 @@ window.addEventListener('load', (event) => {
   header = document.querySelector('header')
 
   // header fixed, darum body-padding
-  document.body.style.paddingTop = `${8 + header.offsetHeight}px`
+  // document.body.style.paddingTop = `${8 + header.offsetHeight}px`
 
   // adjust height of slider
   // height comes from min-width in css
