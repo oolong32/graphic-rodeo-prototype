@@ -18,7 +18,7 @@ window.addEventListener('load', (event) => {
   // document.body.style.paddingTop = `${8 + header.offsetHeight}px`
 
   // adjust height of slider
-  // height comes from min-width in css
+  // height comes from min-width in css 🥲
   const sliderItemsArr = [...sliderItems] // spread node into array
   const sliderItemsHeights = sliderItemsArr.map((item) => {
   console.log(item.querySelector('img').offsetHeight)
@@ -76,11 +76,11 @@ window.addEventListener('load', (event) => {
     }
 
     // handle header visibility
-    if (scrollingDown) {
+    if (scrollingDown && window.scrollY > 200) { // Letzteres wegen Unzuverlässigkeit
       header.classList.remove('scrolling-up')
       header.classList.add('scrolling-down')
     }
-    if (scrollingUp) {
+    if (scrollingUp || window.scrollY < 200) { // Letzteres wegen Unzuverlässigkeit
       header.classList.remove('scrolling-down')
       header.classList.add('scrolling-up')
     }
