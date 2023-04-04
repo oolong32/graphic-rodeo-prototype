@@ -26,6 +26,11 @@ window.addEventListener('load', (event) => {
   })
   const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
   slider.setAttribute('style', `--slider-height: ${sliderHeight}px`)
+  // set img dimensions
+  const sliderImages = document.querySelectorAll('.slider-item img')
+  sliderImages.forEach(img => {
+  // img ACHTUNG Stimmt das Seitenverhältnis?
+  })
   // und fürs padding
   document.body.setAttribute('style', `--slider-height: ${sliderHeight}px`)
 
