@@ -12,7 +12,7 @@ body {
   background: var(--black);
   color: var(--white);
   padding: 0.5rem 1rem 25vh; /* fallback */
-  padding: 2rem 1rem var(--slider-height);
+  padding: 1rem 1rem var(--slider-height);
 }
 
 header {
@@ -111,9 +111,8 @@ em, i {
   text-align: center;
 }
 
-.lead + .lead {
-  border: none;
-  padding-top: 0;
+p + .lead, ul + .lead {
+  padding-top: 2rem;
 }
 
 .partner-list {
