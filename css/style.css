@@ -84,9 +84,14 @@ em, i {
 .spaced-out { letter-spacing: 0.25rem; }
 .centered { text-align: center; }
 
-.lead, .partner-list {
+.lead {
   border-top: 1px solid var(--red);
   padding-top: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--red);
+}
+.partner-list {
   font-size: 1.25rem;
   line-height: 1.2;
   color: var(--red);
