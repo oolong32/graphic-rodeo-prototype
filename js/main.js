@@ -5,6 +5,10 @@ let scrolled = 0
 let scrollingUp = false
 let scrollingDown = false
 
+const state = {
+  language: 'english'
+}
+
 window.addEventListener('load', (event) => {
   // fires when all is loaded, including images
   console.log('all loaded')
@@ -90,6 +94,26 @@ window.addEventListener('load', (event) => {
   // disable scroll on slider
   slider.addEventListener('pointerenter', (event) => {
     event.preventDefault()
+  })
+
+  // handle language switch
+  const langSwitch = document.getElementById('language-switch')
+  langSwitch.addEventListener('pointerdown', (e) => {
+    e.preventDefault
+    if (state.language === 'english') { // was EN switch to DE
+      state.language = 'deutsch'
+      document.querySelector('.deutsch').style.display = 'block'
+      document.querySelector('.english').style.display = 'none'
+
+    } else { // was DE, switch to EN
+      state.language = 'english'
+      document.querySelector('.deutsch').style.display = 'none'
+      document.querySelector('.english').style.display = 'block'
+    }
+    document.querySelectorAll('#language-selection a').forEach(a => {
+      a.classList.toggle('active')
+    })
+
   })
 
 }) // end load event listener

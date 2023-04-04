@@ -47,6 +47,10 @@ header a { text-decoration: none; }
 
 a { color: unset; }
 
+.deutsch { /* default: english */
+  display: none;
+}
+
 #language-switch {
   display: inline-block;
   padding: 0 1rem;
@@ -56,12 +60,14 @@ a { color: unset; }
   grid-row: 1;
   position: relative;
   top: 0.25rem;
+  cursor: pointer;
  }
 
  #language-selection {
    margin: 0;
  }
-.active-language { display: none; }
+#language-selection a { display: none; }
+#language-selection a.active { display: inline-block; }
 
 h1, h2, h3, h4, h5, h6,
 p, ul, ol, blockquote {
