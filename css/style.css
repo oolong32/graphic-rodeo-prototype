@@ -12,7 +12,7 @@ body {
   background: var(--black);
   color: var(--white);
   padding: 0.5rem 1rem 25vh; /* fallback */
-  padding: 3.5rem 1rem var(--slider-height);
+  padding: 2rem 1rem var(--slider-height);
 }
 
 header {
@@ -23,15 +23,20 @@ header {
   background: var(--black);
   transition: 0.75s all 0.3s;
   box-sizing: border-box;
-  padding: 0.5rem 1rem 0;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 .scrolling-up { top:  0; }
 .scrolling-down { top: -300px; }
+header img {
+  grid-column: 1/-1;
+  grid-row: 1;
+}
 
 header h1 {
+  transform: translateY(-1000px);
+  display: none;
   font-size: 2rem;
   color: var(--red);
   font-family: "GerstnerProgWebMedium";
@@ -42,7 +47,20 @@ header a { text-decoration: none; }
 
 a { color: unset; }
 
-#language-switch { text-align: right; }
+#language-switch {
+  display: inline-block;
+  padding: 0 1rem;
+  align-self: center;
+  text-align: right;
+  grid-column: 2/-1;
+  grid-row: 1;
+  position: relative;
+  top: 0.25rem;
+ }
+
+ #language-selection {
+   margin: 0;
+ }
 .active-language { display: none; }
 
 h1, h2, h3, h4, h5, h6,
@@ -85,14 +103,19 @@ em, i {
 .spaced-out { letter-spacing: 0.25rem; }
 .centered { text-align: center; }
 
-.lead {
-  border-top: 1px solid var(--red);
+.lead { border-top: 1px solid var(--red);
   padding-top: 1rem;
   font-size: 1.25rem;
   line-height: 1.2;
   color: var(--red);
   text-align: center;
 }
+
+.lead + .lead {
+  border: none;
+  padding-top: 0;
+}
+
 .partner-list {
   font-size: 1.25rem;
   line-height: 1.2;
