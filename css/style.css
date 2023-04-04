@@ -91,6 +91,7 @@ em, i {
   font-size: 1.25rem;
   line-height: 1.2;
   color: var(--red);
+  text-align: center;
 }
 .partner-list {
   font-size: 1.25rem;
