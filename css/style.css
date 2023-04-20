@@ -12,7 +12,7 @@ body {
   background: var(--black);
   color: var(--white);
   padding: 0.5rem 1rem 25vh; /* fallback */
-  padding: 1rem 1rem var(--slider-height);
+  padding: 1.1rem 1rem var(--slider-height);
 }
 
 header {
