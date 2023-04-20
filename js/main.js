@@ -92,9 +92,9 @@ window.addEventListener('load', (event) => {
   }) // end scroll event listener
 
   // disable scroll on slider
-  slider.addEventListener('pointerenter', (event) => {
-    event.preventDefault()
-  })
+  // slider.addEventListener('pointerenter', (event) => {
+  //   event.preventDefault()
+  // })
 
   // handle language switch
   const langSwitch = document.getElementById('language-switch')

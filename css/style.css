@@ -214,13 +214,29 @@ aside#desktop-nothing { display: none; }
   header, main, footer, #examples { display: none;}
   aside#desktop-nothing {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
+    background: var(--red);
     position: absolute;
     top: 0; left: 0;
     font-size: 200%;
+  }
+  aside#desktop-nothing #qr-code {
+    display: inline-block;
+    transform-origin: center;
+    transform: rotate(45deg);
+    width: 25vw;
+    height: 25vw;
+    background: white;
+    margin-bottom: 5rem;
+  }
+
+  aside#desktop-nothing #wortmarke {
+    width: 30vw;
+    transform: translateX(1.5vw);
   }
 
 }
