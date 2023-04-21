@@ -27,6 +27,13 @@ header {
   grid-template-columns: 1fr auto;
 }
 
+header #header-logo {
+  background: var(--black);
+}
+header #header-logo path {
+  fill: var(--red);
+}
+
 .scrolling-up { top:  0; }
 .scrolling-down { top: -300px; }
 header img {
@@ -230,13 +237,15 @@ aside#desktop-nothing { display: none; }
     transform: rotate(45deg);
     width: 25vw;
     height: 25vw;
-    background: white;
     margin-bottom: 5rem;
   }
 
   aside#desktop-nothing #wortmarke {
     width: 30vw;
     transform: translateX(1.5vw);
+  }
+  aside#desktop-nothing #desktop-logo path {
+    fill: var(--black)
   }
 
 }
