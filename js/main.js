@@ -89,11 +89,15 @@ window.addEventListener('load', (event) => {
       header.classList.add('scrolling-up')
     }
 
-  }) // end scroll event listener
+  }, true) // end scroll event listener
 
   // disable scroll on slider
-  // slider.addEventListener('pointerenter', (event) => {
-  //   event.preventDefault()
+  slider.addEventListener('pointerenter', (event) => {
+    event.preventDefault()
+  })
+
+  // slider.addEventListener('scroll', (event) => {
+    // console.log(`slider-slide detected: ${scrolled}`)
   // })
 
   // handle language switch
