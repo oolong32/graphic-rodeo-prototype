@@ -3,7 +3,7 @@
   line-height: 1.3;
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
-  --red: #cc3333;
+  --red: rgb(204 51 51);
   --white: #fff;
   --black: #281e1e;
 }
