@@ -30,6 +30,7 @@ header {
 header #header-logo {
   background: var(--black);
 }
+header #header-logo rect,
 header #header-logo path {
   fill: var(--red);
 }
