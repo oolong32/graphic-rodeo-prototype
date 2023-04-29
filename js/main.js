@@ -1,3 +1,9 @@
+function getLang() { // wird in state gebraucht
+  if (navigator.languages != undefined) 
+    return navigator.languages[0]; 
+  return navigator.language;
+}
+
 let header
 let slider
 let sliderItems
@@ -6,7 +12,8 @@ let scrollingUp = false
 let scrollingDown = false
 
 const state = {
-  language: 'english'
+  locale: getLang(),
+  language: (getLang().includes('de') ? 'deutsch' : 'english'),
 }
 
 window.addEventListener('load', (event) => {
@@ -101,6 +108,7 @@ window.addEventListener('load', (event) => {
   // })
 
   // handle language switch
+  // see state.locale and state.language
   const langSwitch = document.getElementById('language-switch')
   langSwitch.addEventListener('pointerdown', (e) => {
     e.preventDefault
