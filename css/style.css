@@ -4,39 +4,76 @@
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
   --red: rgb(204 51 51);
+  --header-red: #CC3333;
   --white: #fff;
   --black: #281e1e;
 }
 
 body {
-  background: var(--black);
   color: var(--white);
-  padding: 0.5rem 1rem 25vh; /* fallback */
-  padding: 1.1rem 1rem var(--slider-height);
+  /* background: var(--red); */
+  background: linear-gradient(var(--red), var(--black)); /* keine Blitzer beim Scrollen */
+  padding: 0.5rem 0 25vh; /* fallback */
+  padding: 0 0 var(--slider-height); /* padding top quatsch, oder? */
+}
+
+div#content {
+  /* container for header, main and footer
+  mainly for background against rodeo-pic
+  */
+  padding: 0;
+  background: var(--black);
+  margin-top: var(--content-margin-top);
+  position: relative;
+  width: 100%;
+}
+
+
+aside#rodeo-pic {
+  height: 100vh; /* fallback */
+  height: var(--rodeo-pic-height); 
+  background: url(/assets/img/rodeo.png);
+  background-size: contain;
+  background-position: top center;
+  position: fixed;
+  top: 0;
+  left :0;
+  width: 100%;
+  margin: 0;
+}
+
+header, main, footer {
+  background: var(--black);
+  position: relative;
+  padding: 0 1rem 0;
 }
 
 header {
-  position: fixed;
+  padding: 0;
+  background: var(--header-red);
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   width: 100%;
-  background: var(--black);
-  transition: 0.75s all 0.3s;
+  /* transition: 0.75s all 0.3s; */
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr auto;
 }
 
 header #header-logo {
-  background: var(--black);
+  /* background: var(--black); */
+  background: var(--header-red);
+
 }
 header #header-logo rect,
 header #header-logo path {
-  fill: var(--red);
+  /* fill: var(--red); */
+  fill: white;
 }
 
-.scrolling-up { top:  0; }
-.scrolling-down { top: -300px; }
+/* .scrolling-up { top:  0; } */
+/* .scrolling-down { top: -300px; } */
 header img {
   grid-column: 1/-1;
   grid-row: 1;
