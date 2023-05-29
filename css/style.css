@@ -4,7 +4,7 @@
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
   --red: rgb(204 51 51);
-  --header-red: #CC3333;
+  --header-red: #cc3333;
   --white: #fff;
   --black: #281e1e;
 }
@@ -12,7 +12,10 @@
 body {
   color: var(--white);
   /* background: var(--red); */
-  background: linear-gradient(var(--red), var(--black)); /* keine Blitzer beim Scrollen */
+  background: linear-gradient(
+    var(--red),
+    var(--black)
+  ); /* keine Blitzer beim Scrollen */
   padding: 0.5rem 0 25vh; /* fallback */
   padding: 0 0 var(--slider-height); /* padding top quatsch, oder? */
 }
@@ -28,21 +31,22 @@ div#content {
   width: 100%;
 }
 
-
 aside#rodeo-pic {
   height: 100vh; /* fallback */
-  height: var(--rodeo-pic-height); 
+  height: var(--rodeo-pic-height);
   background: url(/assets/img/rodeo.png);
-  background-size: contain;
+  background-size: cover;
   background-position: top center;
   position: fixed;
   top: 0;
-  left :0;
+  left: 0;
   width: 100%;
   margin: 0;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   background: var(--black);
   position: relative;
   padding: 0 1rem 0;
@@ -64,7 +68,6 @@ header {
 header #header-logo {
   /* background: var(--black); */
   background: var(--header-red);
-
 }
 header #header-logo rect,
 header #header-logo path {
@@ -88,11 +91,16 @@ header h1 {
   margin: 0;
 }
 
-header a { text-decoration: none; }
+header a {
+  text-decoration: none;
+}
 
-a { color: unset; }
+a {
+  color: unset;
+}
 
-.deutsch { /* default: english */
+.deutsch {
+  /* default: english */
   display: none;
 }
 
@@ -106,20 +114,33 @@ a { color: unset; }
   position: relative;
   top: 0.25rem;
   cursor: pointer;
- }
+}
 
- #language-selection {
-   margin: 0;
- }
-#language-selection a { display: none; }
-#language-selection a.active { display: inline-block; }
+#language-selection {
+  margin: 0;
+}
+#language-selection a {
+  display: none;
+}
+#language-selection a.active {
+  display: inline-block;
+}
 
-h1, h2, h3, h4, h5, h6,
-p, ul, ol, blockquote {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote {
   margin-bottom: 1.5rem;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 0.875rem;
 }
 
@@ -136,7 +157,7 @@ h2 {
   font-family: "GerstnerProgWebMedium";
   font-size: 0.75rem;
   text-transform: uppercase;
-  font-feature-settings: 'cpsp' on, 'case' on;
+  font-feature-settings: "cpsp" on, "case" on;
   border-top: var(--red) solid 1px;
   margin-top: 3.6rem;
   padding-top: 0.3rem;
@@ -145,16 +166,25 @@ h2 {
   color: var(--red);
 }
 
-p, li { letter-spacing: 0.025rem; }
-
-em, i {
-    font-family: "GerstnerProgWebItalic";
+p,
+li {
+  letter-spacing: 0.025rem;
 }
 
-.spaced-out { letter-spacing: 0.25rem; }
-.centered { text-align: center; }
+em,
+i {
+  font-family: "GerstnerProgWebItalic";
+}
 
-.lead { border-top: 1px solid var(--red);
+.spaced-out {
+  letter-spacing: 0.25rem;
+}
+.centered {
+  text-align: center;
+}
+
+.lead {
+  border-top: 1px solid var(--red);
   padding-top: 1rem;
   font-size: 1.25rem;
   line-height: 1.2;
@@ -162,7 +192,8 @@ em, i {
   text-align: center;
 }
 
-p + .lead, ul + .lead {
+p + .lead,
+ul + .lead {
   padding-top: 2rem;
 }
 
@@ -172,12 +203,14 @@ p + .lead, ul + .lead {
   color: var(--red);
 }
 
-h2 + .lead, h2 + .partner-list {
- border-top: none;
- padding-top: 0;
+h2 + .lead,
+h2 + .partner-list {
+  border-top: none;
+  padding-top: 0;
 }
 
-footer, .small {
+footer,
+.small {
   font-size: 0.75rem;
   line-height: 1.3;
   letter-spacing: 0.05rem;
@@ -189,9 +222,8 @@ footer #footer-links {
   justify-content: space-between;
 }
 
-
 .inline-icon {
-  height: 1.25rem; 
+  height: 1.25rem;
   width: auto;
   display: inline;
   margin-right: 0.25rem;
@@ -251,12 +283,33 @@ footer a {
   border-bottom: 0.75rem solid var(--black);
 }
 
-img { width: 100%; height: 100%; }
+img {
+  width: 100%;
+  height: 100%;
+}
 
-aside#desktop-nothing { display: none; }
+aside#desktop-nothing {
+  display: none;
+}
 
 @media (min-width: 800px) {
-  header, main, footer, #examples { display: none;}
+  body {
+    background: none;
+    height: 100vh;
+  }
+
+  aside#rodeo-pic,
+  header,
+  main,
+  footer,
+  #examples {
+    display: none;
+  }
+
+  div#content {
+    margin-top: 0;
+  }
+
   aside#desktop-nothing {
     display: flex;
     flex-direction: column;
@@ -266,7 +319,8 @@ aside#desktop-nothing { display: none; }
     width: 100vw;
     background: var(--red);
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     font-size: 200%;
   }
   aside#desktop-nothing #qr-code {
@@ -283,8 +337,6 @@ aside#desktop-nothing { display: none; }
     transform: translateX(1.5vw);
   }
   aside#desktop-nothing #desktop-logo path {
-    fill: var(--black)
+    fill: var(--black);
   }
-
 }
-
