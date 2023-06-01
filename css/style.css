@@ -72,7 +72,7 @@ header #header-logo {
 header #header-logo rect,
 header #header-logo path {
   /* fill: var(--red); */
-  fill: white;
+  fill: black;
 }
 
 /* .scrolling-up { top:  0; } */
