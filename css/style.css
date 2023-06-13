@@ -34,7 +34,7 @@ div#content {
 aside#rodeo-pic {
   height: 100vh; /* fallback */
   height: var(--rodeo-pic-height);
-  background: url(/assets/img/rodeo.jpeg);
+  background: url(/assets/img/rodeo.jpg);
   background-size: cover;
   background-position: top center;
   position: fixed;
