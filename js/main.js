@@ -16,6 +16,8 @@ let scrollingDown = false
 const state = {
   locale: getLang(),
   language: getLang().includes("de") ? "deutsch" : "english",
+  scrolled: false,
+  sliderVisible: false
 }
 
 window.addEventListener("load", (event) => {
@@ -24,6 +26,7 @@ window.addEventListener("load", (event) => {
 
   // console.log("page is fully loaded")
   slider = document.getElementById("slider")
+  examples = document.getElementById("examples") // slider container
   sliderItems = document.querySelectorAll(".slider-item")
   header = document.querySelector("header")
   rodeoPic = document.getElementById("rodeo-pic")
@@ -48,15 +51,29 @@ window.addEventListener("load", (event) => {
   })
   // und fürs padding
   document.body.setAttribute("style", `--slider-height: ${sliderHeight}px`)
+  examples.setAttribute("style", `--examples-offset: ${sliderHeight}px`)
+
+
 
   // scroll to center of slider
-  slider.scrollBy(-slider.scrollLeftMax / 2, 0)
-  console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
+  slider.scrollBy(-slider.scrollLeftMax / 2, 0) // fires the scroll event!?
+  // console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
 
   // handle scroll event
   document.addEventListener(
     "scroll",
     (event) => {
+
+      if (scrolled > sliderHeight) {
+        state.scrolled = true // so it has begun
+      }
+      // slider moves into viewport
+      // das ist bescheuert (strukturell) geht das besser?
+      if (state.scrolled && !examples.classList.contains("visible")) {
+        examples.classList.add('visible')
+        state.sliderVisible = true
+      }
+
       // handle scroll data, when body is scrolled
       const scrolledAmount = window.scrollY
       const scrollDifference = scrolledAmount - scrolled
@@ -140,8 +157,8 @@ window.addEventListener("load", (event) => {
   })
 
   // set rodeo-pic height
-  const rodeoPicHeight = window.innerHeight - header.offsetHeight -sliderHeight
-  const contentMarginTop = rodeoPicHeight - 10;
+  const rodeoPicHeight = window.innerHeight - header.offsetHeight
+  const contentMarginTop = rodeoPicHeight
   rodeoPic.setAttribute("style", `--rodeo-pic-height: ${rodeoPicHeight}px`)
   content.setAttribute("style", `--content-margin-top: ${contentMarginTop}px`)
  

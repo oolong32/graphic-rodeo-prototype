@@ -4,7 +4,8 @@
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
   --red: rgb(204 51 51);
-  --header-red: #cc3333;
+  --header-fg: white;
+  --header-bg: black;
   --white: #fff;
   --black: #281e1e;
 }
@@ -54,7 +55,7 @@ footer {
 
 header {
   padding: 0;
-  background: var(--header-red);
+  background: var(--header-bg);
   /* position: fixed;
   top: 0;
   left: 0; */
@@ -67,12 +68,11 @@ header {
 
 header #header-logo {
   /* background: var(--black); */
-  background: var(--header-red);
+  background: var(--header-bg);
 }
 header #header-logo rect,
 header #header-logo path {
-  /* fill: var(--red); */
-  fill: black;
+  fill: var(--header-fg);
 }
 
 /* .scrolling-up { top:  0; } */
@@ -114,6 +114,8 @@ a {
   position: relative;
   top: 0.25rem;
   cursor: pointer;
+  color: var(--header-fg);
+  transform: translateY(-0.15rem);
 }
 
 #language-selection {
@@ -252,12 +254,21 @@ footer a {
   margin: 0;
 }
 
-#examples {
+#examples { /* Bild-Leiste */
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 100;
+  transform: translateY(var(--examples-offset));
+  transition: transform 0.4s ease-in;
+  opacity: 0
+}
+
+#examples.visible { /* come in on first scroll */
+  transform: translateY(0);
+  display: block;
+  opacity: 1;
 }
 
 #slider {
@@ -270,7 +281,7 @@ footer a {
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
-  border-top: 0.75rem solid var(--black);
+  /* border-top: 0.75rem solid var(--black); */
   background: var(--black);
 }
 
@@ -279,6 +290,7 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  border-top: 0.75rem solid var(--black);
   border-right: 0.75rem solid var(--black);
   border-bottom: 0.75rem solid var(--black);
 }
