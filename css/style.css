@@ -12,13 +12,7 @@
 
 body {
   color: var(--white);
-  /* background: var(--red); */
-  background: linear-gradient(
-    var(--red),
-    var(--black)
-  ); /* keine Blitzer beim Scrollen */
-  padding: 0.5rem 0 25vh; /* fallback */
-  padding: 0 0 var(--slider-height); /* padding top quatsch, oder? */
+  background: var(--black); 
 }
 
 div#content {
@@ -56,14 +50,28 @@ footer {
 header {
   padding: 0;
   background: var(--header-bg);
-  /* position: fixed;
-  top: 0;
-  left: 0; */
   width: 100%;
-  /* transition: 0.75s all 0.3s; */
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr auto;
+}
+
+#content.got-to-top {
+  position: absolute;
+  top: 0;
+  padding-top: var(--header-height);
+  margin: 0;
+}
+
+.got-to-top header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.got-to-top main {
+  position: relative;
+  top: var(--header-height);
+  top: 0;
 }
 
 header #header-logo {
@@ -218,6 +226,10 @@ footer,
   letter-spacing: 0.05rem;
 }
 
+footer {
+  padding-bottom: var(--slider-height);
+}
+
 footer #footer-links {
   font-size: 1rem;
   display: flex;
@@ -265,7 +277,7 @@ footer a {
   opacity: 0
 }
 
-#examples.visible { /* come in on first scroll */
+.got-to-top #examples { /* show slider when header hits top */
   transform: translateY(0);
   display: block;
   opacity: 1;
@@ -290,7 +302,6 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-top: 0.75rem solid var(--black);
   border-right: 0.75rem solid var(--black);
   border-bottom: 0.75rem solid var(--black);
 }
