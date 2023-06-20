@@ -4,6 +4,10 @@ function getLang() {
   return navigator.language
 }
 
+function roundNumber(n) {
+  return Math.round(n * 100) / 100
+}
+
 let header
 let rodeoPic
 let slider
@@ -33,27 +37,65 @@ window.addEventListener('load', (event) => {
   header = document.querySelector('header')
   rodeoPic = document.getElementById('rodeo-pic')
   content = document.getElementById('content')
+  footer = document.querySelector('footer')
 
   const headerHeight = header.offsetHeight
-
-  // header fixed, darum body-padding
-  // document.body.style.paddingTop = `${8 + header.offsetHeight}px`
 
   // adjust height of slider
   // height comes from min-width in css 🥲
   const sliderItemsArr = [...sliderItems] // spread node into array
   const sliderItemsHeights = sliderItemsArr.map((item) => {
-    console.log(item.querySelector('img').offsetHeight)
     return item.querySelector('img').offsetHeight // not the li, but the img in the li
+    // in my case (iphone SE) 152
   })
-  const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
-  slider.setAttribute('style', `--slider-height: ${sliderHeight}px`)
-  document.querySelector('footer').setAttribute('style', `--slider-height: ${sliderHeight}px`)
+  // console.log(sliderItemsHeights)
+  
   // set img dimensions
+  // Prämisse: DIN Hochformat = standard
+  // Breite für DIN Hochformat = 1/3 d. (Viewport - 2 * 5)
+  // 1 : 1.41
+
+  // width for portrait img = third of viewport minus borders
+  const targetWidth = Math.trunc((window.innerWidth - 10) / 3)
+  const targetHeight = targetWidth * Math.SQRT2
+  console.log(targetHeight)
+
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img) => {
-    // img ACHTUNG Stimmt das Seitenverhältnis?
+
+    // get original measure
+    const realSize = {
+      w: img.naturalWidth,
+      h: img.naturalHeight
+    }
+
+    // add class describing aspect ratio
+    if (realSize.w > realSize.h) {
+      img.classList.add('querformat')
+    } else if (realSize.w == realSize.h) {
+      img.classList.add('quadrat')
+    } else {
+      img.classList.add('hochformat')
+    }
+
+    // how should the original measure be scaled down?
+    const scaleFactor = targetHeight / realSize.h
+
+    imgWidth = realSize.w * scaleFactor
+    imgHeight = targetHeight
+
+    // set img attribute and css dimensions
+    img.width = imgWidth  
+    img.height = imgHeight
+    img.setAttribute('style', `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`)
+
   })
+
+  // const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
+  const sliderHeight = targetHeight // image height + border
+  slider.setAttribute('style', `--slider-height: ${sliderHeight}px`)
+  footer.setAttribute('style', `--slider-height: ${sliderHeight}px`)
+
   // und fürs padding
   document.body.setAttribute('style', `--slider-height: ${sliderHeight}px`)
   examples.setAttribute('style', `--examples-offset: ${sliderHeight}px`)
@@ -70,7 +112,7 @@ window.addEventListener('load', (event) => {
         state.scrolled = true // so it has begun
       }
       // slider moves into viewport
-      // das ist bescheuert (strukturell) geht das besser?
+      // bescheuert: weil wird jedesmal abgefragt. geht das besser?
       if (state.scrolled && !examples.classList.contains('visible')) {
         examples.classList.add('visible')
         state.sliderVisible = true
@@ -111,12 +153,18 @@ window.addEventListener('load', (event) => {
           rodeoPic.style.backgroundImage = 'none'
         }
         console.log(`scrolled content to ${headerHeight}`)
-        // shit shit shit
         // das führt zu einem Sprung!
+        // obsolet, oder?
       }
 
       // get slider’s scrolled data
-      const sliderWidth = sliderItems.length * sliderItems[0].offsetWidth
+      // slider.offsetWidth is the viewport’s width, so useless
+      // achtung
+      // achtung
+      // achtung, dies sollte nicht teil es event handlers sein!
+      // const sliderWidth = sliderItems.length * sliderItems[0].offsetWidth
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
+      const sliderWidth = [...sliderItems].map(li => { return li.children[0].width}).reduce((a, b) => { return a + b + rem * 0.75})
 
       // translate scroll to slider
       // btw. what happens if slider is scrolled?
@@ -129,7 +177,7 @@ window.addEventListener('load', (event) => {
 
       slider.scrollBy(scrollDifference, 0)
       if (scrollingDown && slider.scrollLeft >= sliderWidth / 2) {
-        // reset, when half throught
+        // reset, when half through
         slider.scrollTo(0, 0)
       }
       if (scrollingUp && slider.scrollLeft === 0) {
