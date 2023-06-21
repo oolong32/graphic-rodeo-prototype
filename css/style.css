@@ -5,7 +5,6 @@
   text-rendering: optimizeLegibility;
   --red: rgb(204 51 51);
   --header-fg: white;
-  --header-bg: black;
   --white: #fff;
   --black: #281e1e;
 }
@@ -48,8 +47,7 @@ footer {
 }
 
 header {
-  padding: 0;
-  background: var(--header-bg);
+  padding: 0.5rem 0;
   width: 100%;
   box-sizing: border-box;
   display: grid;
@@ -75,8 +73,7 @@ header {
 }
 
 header #header-logo {
-  /* background: var(--black); */
-  background: var(--header-bg);
+  background: var(--black);
 }
 header #header-logo rect,
 header #header-logo path {
@@ -200,6 +197,12 @@ i {
   line-height: 1.2;
   color: var(--red);
   text-align: center;
+}
+
+.lead:first-of-type {
+  padding-top: 2rem;
+  font-size: 1.5rem;
+  border-top: none;
 }
 
 p + .lead,
