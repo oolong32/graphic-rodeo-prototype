@@ -197,6 +197,7 @@ i {
   line-height: 1.2;
   color: var(--red);
   text-align: center;
+  hyphens: manual;
 }
 
 .lead:first-of-type {
