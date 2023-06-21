@@ -294,7 +294,7 @@ footer a {
   overflow-x: hidden;
   display: flex;
   /* border-top: 0.75rem solid var(--black); */
-  border-top: 1px solid white;
+  /* border-top: 1px solid white; */
   background: var(--black);
 }
 
