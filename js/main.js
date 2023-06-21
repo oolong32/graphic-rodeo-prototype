@@ -4,6 +4,8 @@ function getLang() {
   return navigator.language
 }
 
+let rem // font-size, assigned after load
+
 function roundNumber(n) {
   return Math.round(n * 100) / 100
 }
@@ -19,7 +21,7 @@ let scrollingDown = false
 
 const state = {
   locale: getLang(),
-  language: getLang().includes('de') ? 'deutsch' : 'english',
+  language: getLang().includes('en') ? 'deutsch' : 'english',
   scrolled: false,
   sliderVisible: false,
   byeCowboy: false,
@@ -30,6 +32,7 @@ window.addEventListener('load', (event) => {
   // fires when all is loaded, including images
   console.log('all loaded')
 
+  rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
   // console.log("page fully loaded")
   slider = document.getElementById('slider')
   examples = document.getElementById('examples') // slider container
@@ -56,7 +59,8 @@ window.addEventListener('load', (event) => {
   // 1 : 1.41
 
   // width for portrait img = third of viewport minus borders
-  const targetWidth = Math.trunc((window.innerWidth - 10) / 3)
+  const margins = 0.75 * rem * 2
+  const targetWidth = Math.trunc((window.innerWidth - margins) / 3)
   const targetHeight = targetWidth * Math.SQRT2
   console.log(targetHeight)
 
@@ -163,7 +167,6 @@ window.addEventListener('load', (event) => {
       // achtung
       // achtung, dies sollte nicht teil es event handlers sein!
       // const sliderWidth = sliderItems.length * sliderItems[0].offsetWidth
-      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
       const sliderWidth = [...sliderItems].map(li => { return li.children[0].width}).reduce((a, b) => { return a + b + rem * 0.75})
 
       // translate scroll to slider
