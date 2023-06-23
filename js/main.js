@@ -28,9 +28,39 @@ const state = {
   contentAligned: false,
 }
 
+/*
+  lazy loading of background image
+  see https://web.dev/lazy-loading-images/#images-css
+  no visible effect – probably same as without all this
+*/
+/*
+document.addEventListener('DOMContentLoaded', () => {
+  // fires when HTML parsed
+  //  but before CSS and images have beend loaded
+  console.log('html parsed')
+  const rodeoPic = document.getElementById('rodeo-pic')
+  if ("IntersectionObserver" in window) {
+    let lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          lazyBackgroundObserver.unobserve(entry.target);
+          console.log(entry)
+        }
+      });
+    });
+
+    lazyBackgroundObserver.observe(rodeoPic);
+  }
+})
+*/
+
 window.addEventListener('load', (event) => {
-  // fires when all is loaded, including images
-  console.log('all loaded')
+  // fires when page fully loaded, including images
+  // console.log('all loaded')
+  
+  // overwrite inline css in <main> to hide text until bg loaded
+  document.querySelector('main').style.opacity = 1
 
   rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
   // console.log("page fully loaded")
@@ -52,7 +82,7 @@ window.addEventListener('load', (event) => {
     // in my case (iphone SE) 152
   })
   // console.log(sliderItemsHeights)
-  
+
   // set img dimensions
   // Prämisse: DIN Hochformat = standard
   // Breite für DIN Hochformat = 1/3 d. (Viewport - 2 * 5)
@@ -66,11 +96,10 @@ window.addEventListener('load', (event) => {
 
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img) => {
-
     // get original measure
     const realSize = {
       w: img.naturalWidth,
-      h: img.naturalHeight
+      h: img.naturalHeight,
     }
 
     // add class describing aspect ratio
@@ -89,10 +118,12 @@ window.addEventListener('load', (event) => {
     imgHeight = targetHeight
 
     // set img attribute and css dimensions
-    img.width = imgWidth  
+    img.width = imgWidth
     img.height = imgHeight
-    img.setAttribute('style', `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`)
-
+    img.setAttribute(
+      'style',
+      `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
+    )
   })
 
   // const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
@@ -167,7 +198,13 @@ window.addEventListener('load', (event) => {
       // achtung
       // achtung, dies sollte nicht teil es event handlers sein!
       // const sliderWidth = sliderItems.length * sliderItems[0].offsetWidth
-      const sliderWidth = [...sliderItems].map(li => { return li.children[0].width}).reduce((a, b) => { return a + b + rem * 0.75})
+      const sliderWidth = [...sliderItems]
+        .map((li) => {
+          return li.children[0].width
+        })
+        .reduce((a, b) => {
+          return a + b + rem * 0.75
+        })
 
       // translate scroll to slider
       // btw. what happens if slider is scrolled?
