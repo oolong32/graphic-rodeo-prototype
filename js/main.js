@@ -60,8 +60,7 @@ window.addEventListener('load', (event) => {
   // console.log('all loaded')
   
   // overwrite inline css in <main> to hide text until bg loaded
-  document.querySelector('main').style.opacity = 1
-  document.getElementById('language-switch').style.opacity = 1
+  document.body.style.opacity = 1
 
   rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
   // console.log("page fully loaded")
