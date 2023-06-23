@@ -105,10 +105,10 @@ window.addEventListener('load', (event) => {
     // add class describing aspect ratio
     if (realSize.w > realSize.h) {
       img.classList.add('querformat')
-    } else if (realSize.w == realSize.h) {
-      img.classList.add('quadrat')
-    } else {
+    } else if (realSize.w < realSize.h) {
       img.classList.add('hochformat')
+    } else {
+      img.classList.add('quadrat')
     }
 
     // how should the original measure be scaled down?
