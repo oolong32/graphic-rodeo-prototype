@@ -4,6 +4,49 @@ function getLang() {
   return navigator.language
 }
 
+function setLanguage() { // set language according to locale
+  // texts
+  const contentDe = document.querySelector('.deutsch')
+  const contentEn = document.querySelector('.english')
+  // language selection links
+  const languageSelectionDe = document.getElementById('language-selection-de')
+  const languageSelectionEn = document.getElementById('language-selection-en')
+  if (state.language === 'english') { // locale = en
+    contentDe.style.display = 'none'
+    contentEn.style.display = 'block'
+    if (languageSelectionEn.classList.contains('active')) {
+      // language-link should show "de"
+      languageSelectionEn.classList.remove('active')
+      languageSelectionDe.classList.add('active')
+    }
+  } else { // locale = de
+    contentDe.style.display = 'block'
+    contentEn.style.display = 'none'
+    if (languageSelectionDe.classList.contains('active')) {
+      // language-link should show "en"
+      languageSelectionDe.classList.remove('active')
+      languageSelectionEn.classList.add('active')
+    }
+  }
+}
+
+function switchLanguage() { // switch from one to the other language
+    if (state.language === 'english') {
+      // was EN switch to DE
+      state.language = 'deutsch'
+      document.querySelector('.deutsch').style.display = 'block'
+      document.querySelector('.english').style.display = 'none'
+    } else {
+      // was DE, switch to EN
+      state.language = 'english'
+      document.querySelector('.deutsch').style.display = 'none'
+      document.querySelector('.english').style.display = 'block'
+    }
+    document.querySelectorAll('#language-selection a').forEach((a) => {
+      a.classList.toggle('active')
+    })
+}
+
 let rem // font-size, assigned after load
 
 function roundNumber(n) {
@@ -21,7 +64,7 @@ let scrollingDown = false
 
 const state = {
   locale: getLang(),
-  language: getLang().includes('en') ? 'deutsch' : 'english',
+  language: getLang().includes('en') ? 'english' : 'deutsch',
   scrolled: false,
   sliderVisible: false,
   byeCowboy: false,
@@ -120,6 +163,7 @@ window.addEventListener('load', (event) => {
     // set img attribute and css dimensions
     img.width = imgWidth
     img.height = imgHeight
+    console.log(`foo ${imgWidth}`)
     img.setAttribute(
       'style',
       `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
@@ -248,25 +292,15 @@ window.addEventListener('load', (event) => {
   // console.log(`slider-slide detected: ${scrolled}`)
   // })
 
+  // set language when first loaded
+  setLanguage()
+
   // handle language switch
   // see state.locale and state.language
   const langSwitch = document.getElementById('language-switch')
   langSwitch.addEventListener('pointerdown', (e) => {
     e.preventDefault
-    if (state.language === 'english') {
-      // was EN switch to DE
-      state.language = 'deutsch'
-      document.querySelector('.deutsch').style.display = 'block'
-      document.querySelector('.english').style.display = 'none'
-    } else {
-      // was DE, switch to EN
-      state.language = 'english'
-      document.querySelector('.deutsch').style.display = 'none'
-      document.querySelector('.english').style.display = 'block'
-    }
-    document.querySelectorAll('#language-selection a').forEach((a) => {
-      a.classList.toggle('active')
-    })
+    switchLanguage()
   })
 
   // set rodeo-pic height
