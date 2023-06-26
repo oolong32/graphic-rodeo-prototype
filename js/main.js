@@ -64,7 +64,7 @@ let scrollingDown = false
 
 const state = {
   locale: getLang(),
-  language: getLang().includes('en') ? 'english' : 'deutsch',
+  language: getLang().includes('de') ? 'deutsch' : 'english',
   scrolled: false,
   sliderVisible: false,
   byeCowboy: false,
