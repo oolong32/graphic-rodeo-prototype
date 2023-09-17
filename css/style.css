@@ -19,7 +19,7 @@ div#content {
   mainly for background against rodeo-pic
   */
   padding: 0;
-  background: var(--black);
+  background: var(--white);
   margin-top: var(--content-margin-top);
   position: relative;
   width: 100%;
@@ -41,7 +41,7 @@ aside#rodeo-pic {
 header,
 main,
 footer {
-  background: var(--black);
+  background: var(--white);
   position: relative;
   padding: 0 1rem 0;
 }
