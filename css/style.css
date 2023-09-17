@@ -5,8 +5,8 @@
   text-rendering: optimizeLegibility;
   --red: rgb(204 51 51);
   --header-fg: white;
-  --white: #fff;
-  --black: #281e1e;
+  --white: #281e1e;
+  --black: #fff;
 }
 
 body {
