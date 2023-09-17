@@ -4,9 +4,9 @@
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
   --red: rgb(204 51 51);
-  --header-fg: white;
-  --white: #281e1e;
-  --black: #fff;
+  --header-fg: black;
+  --white: #fff;
+  --black: #281e1e;
 }
 
 body {
@@ -299,7 +299,7 @@ footer a {
   display: flex;
   /* border-top: 0.75rem solid var(--black); */
   /* border-top: 1px solid white; */
-  background: var(--black);
+  background: var(--withe);
 }
 
 .slider-item {
