@@ -258,7 +258,7 @@ footer a {
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
-  border: 1px solid var(--red);
+  border: 1px solid var(--black);
   border-radius: 0.5rem;
   padding: 0.3rem 0 0.3rem;
   margin: 0 auto 2rem;
