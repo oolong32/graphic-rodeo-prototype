@@ -10,8 +10,8 @@
 }
 
 body {
-  color: var(--white);
-  background: var(--black); 
+  color: var(--black);
+  background: var(--white); 
 }
 
 div#content {
