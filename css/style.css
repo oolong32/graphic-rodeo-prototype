@@ -5,7 +5,7 @@
   text-rendering: optimizeLegibility;
   --red: #8c8c8c;
   --header-fg: withe;
-  --white: #f0f0f0;
+  --white: #f5f5f5;
   --black: #281e1e;
 }
 
@@ -41,7 +41,7 @@ aside#rodeo-pic {
 header,
 main,
 footer {
-  background: var(--white);
+  background: var(--black);
   position: relative;
   padding: 0 1rem 0;
 }
@@ -73,7 +73,7 @@ header {
 }
 
 header #header-logo {
-  background: var(--withe);
+  background: var(--black);
 }
 header #header-logo rect,
 header #header-logo path {
