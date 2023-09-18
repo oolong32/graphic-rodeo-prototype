@@ -5,7 +5,7 @@
   text-rendering: optimizeLegibility;
   --red: #8c8c8c;
   --header-fg: withe;
-  --white: #f5f5f5;
+  --white: #fafafa;
   --black: #281e1e;
 }
 
@@ -19,7 +19,7 @@ div#content {
   mainly for background against rodeo-pic
   */
   padding: 0;
-  background: var(--white);
+  background: var(--black);
   margin-top: var(--content-margin-top);
   position: relative;
   width: 100%;
@@ -73,7 +73,7 @@ header {
 }
 
 header #header-logo {
-  background: var(--black);
+  background: var(--white);
 }
 header #header-logo rect,
 header #header-logo path {
