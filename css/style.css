@@ -226,7 +226,7 @@ h2 + .partner-list {
 footer,
 .small {
   font-size: 0.75rem;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: 0.05rem;
 }
 
@@ -309,8 +309,8 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-right: 0.75rem solid var(--withe);
-  border-bottom: 0.75rem solid var(--withe);
+  border-right: 0.75rem solid var(--white);
+  border-bottom: 0.75rem solid var(--white);
 }
 
 img { /* preserve aspect ratio */
