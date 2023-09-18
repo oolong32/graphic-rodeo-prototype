@@ -41,7 +41,7 @@ aside#rodeo-pic {
 header,
 main,
 footer {
-  background: var(--black);
+  background: var(--white);
   position: relative;
   padding: 0 1rem 0;
 }
