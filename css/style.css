@@ -297,9 +297,9 @@ footer a {
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
-  /* border-top: 0.75rem solid var(--withe); */
+  /* border-top: 0.75rem solid var(--white); */
   /* border-top: 1px solid white; */
-  background: var(--withe);
+  background: var(--white);
 }
 
 .slider-item {
