@@ -11,7 +11,7 @@
 
 body {
   color: var(--black);
-  background: var(--black); 
+  background: var(--withe); 
 }
 
 div#content {
@@ -19,7 +19,7 @@ div#content {
   mainly for background against rodeo-pic
   */
   padding: 0;
-  background: var(--black);
+  background: var(--withe);
   margin-top: var(--content-margin-top);
   position: relative;
   width: 100%;
