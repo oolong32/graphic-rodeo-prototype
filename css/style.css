@@ -4,14 +4,14 @@
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
   --red: #828282;
-  --header-fg: withe;
+  --header-fg: white;
   --white: #fafafa;
   --black: #281e1e;
 }
 
 body {
   color: var(--black);
-  background: var(--withe); 
+  background: var(--white); 
 }
 
 div#content {
@@ -19,7 +19,7 @@ div#content {
   mainly for background against rodeo-pic
   */
   padding: 0;
-  background: var(--withe);
+  background: var(--white);
   margin-top: var(--content-margin-top);
   position: relative;
   width: 100%;
