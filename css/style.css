@@ -1,6 +1,6 @@
 :root {
   font-size: 110%;
-  line-height: 1.3;
+  line-height: 1.4;
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
   --red: #828282;
@@ -194,7 +194,7 @@ i {
   border-top: 1px solid var(--red);
   padding-top: 1rem;
   font-size: 1.25rem;
-  line-height: 1.4;
+  line-height: 1.2;
   color: var(--red);
   text-align: center;
   hyphens: manual;
