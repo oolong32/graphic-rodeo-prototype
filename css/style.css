@@ -73,7 +73,7 @@ header {
 }
 
 header #header-logo {
-  background: var(--red);
+  background: var(--white);
 }
 header #header-logo rect,
 header #header-logo path {
