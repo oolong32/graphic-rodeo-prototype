@@ -297,9 +297,9 @@ footer a {
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
-  /* border-top: 0.75rem solid var(--white); */
+  /* border-top: 0.75rem solid var(--red); */
   /* border-top: 1px solid red; */
-  background: var(--white);
+  background: var(--red);
 }
 
 .slider-item {
@@ -309,8 +309,8 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-right: 0.75rem solid var(--white);
-  border-bottom: 0.75rem solid var(--white);
+  border-right: 0.75rem solid var(--red);
+  border-bottom: 0.75rem solid var(--red);
 }
 
 img { /* preserve aspect ratio */
