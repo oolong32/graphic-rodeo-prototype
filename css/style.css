@@ -3,7 +3,7 @@
   line-height: 1.4;
   font-family: "GerstnerProgWebRegular";
   text-rendering: optimizeLegibility;
-  --red: #e63c54;
+  --red: #828282;
   --header-fg: black;
   --white: #ffffff;
   --black: #000000;
@@ -191,7 +191,7 @@ i {
 }
 
 .lead {
-  border-top: 1px solid var(--white);
+  border-top: 1px solid var(--black);
   padding-top: 1rem;
   font-size: 1.25rem;
   line-height: 1.2;
