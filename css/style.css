@@ -195,7 +195,7 @@ i {
   padding-top: 1rem;
   font-size: 1.25rem;
   line-height: 1.2;
-  color: var(--white);
+  color: var(--red);
   text-align: center;
   hyphens: manual;
 }
