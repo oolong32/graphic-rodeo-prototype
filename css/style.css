@@ -5,7 +5,7 @@
   text-rendering: optimizeLegibility;
   --red: #cccccc;
   --header-fg: black;
-  --white: #fafafa;
+  --white: #ff3333;
   --black: #281e1e;
 }
 
@@ -169,7 +169,7 @@ h2 {
   margin-top: 3.6rem;
   padding-top: 0.3rem;
   letter-spacing: 0.05rem;
-  /* color: var(--ff3333); */
+  /* color: var(--white); */
   color: var(--white);
 }
 
