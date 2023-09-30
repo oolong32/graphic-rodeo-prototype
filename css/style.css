@@ -91,7 +91,7 @@ header h1 {
   transform: translateY(-1000px);
   display: none;
   font-size: 2rem;
-  color: var(--red);
+  color: var(--white);
   font-family: "GerstnerProgWebMedium";
   margin: 0;
 }
