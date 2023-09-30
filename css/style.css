@@ -309,8 +309,8 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-right: 0.75rem solid var(--white);
-  border-bottom: 0.75rem solid var(--white);
+  border-right: 0.75rem solid var(--black);
+  border-bottom: 0.75rem solid var(--black);
 }
 
 img { /* preserve aspect ratio */
