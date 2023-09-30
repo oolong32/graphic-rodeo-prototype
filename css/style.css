@@ -77,7 +77,7 @@ header #header-logo {
 }
 header #header-logo rect,
 header #header-logo path {
-  fill: var(--header-fg);
+  fill: var(--white);
 }
 
 /* .scrolling-up { top:  0; } */
