@@ -298,7 +298,7 @@ footer a {
   overflow-x: hidden;
   display: flex;
   /* border-top: 0.75rem solid var(--fdfdfd); */
-  /* border-top: 1px solid fdfdfd; */
+  /* border-top: 1px solid #fdfdfd; */
   background: var(--fdfdfd);
 }
 
