@@ -4,14 +4,16 @@ function getLang() {
   return navigator.language
 }
 
-function setLanguage() { // set language according to locale
+function setLanguage() {
+  // set language according to locale
   // texts
   const contentDe = document.querySelector('.deutsch')
   const contentEn = document.querySelector('.english')
   // language selection links
   const languageSelectionDe = document.getElementById('language-selection-de')
   const languageSelectionEn = document.getElementById('language-selection-en')
-  if (state.language === 'english') { // locale = en
+  if (state.language === 'english') {
+    // locale = en
     contentDe.style.display = 'none'
     contentEn.style.display = 'block'
     if (languageSelectionEn.classList.contains('active')) {
@@ -19,7 +21,8 @@ function setLanguage() { // set language according to locale
       languageSelectionEn.classList.remove('active')
       languageSelectionDe.classList.add('active')
     }
-  } else { // locale = de
+  } else {
+    // locale = de
     contentDe.style.display = 'block'
     contentEn.style.display = 'none'
     if (languageSelectionDe.classList.contains('active')) {
@@ -30,21 +33,22 @@ function setLanguage() { // set language according to locale
   }
 }
 
-function switchLanguage() { // switch from one to the other language
-    if (state.language === 'english') {
-      // was EN switch to DE
-      state.language = 'deutsch'
-      document.querySelector('.deutsch').style.display = 'block'
-      document.querySelector('.english').style.display = 'none'
-    } else {
-      // was DE, switch to EN
-      state.language = 'english'
-      document.querySelector('.deutsch').style.display = 'none'
-      document.querySelector('.english').style.display = 'block'
-    }
-    document.querySelectorAll('#language-selection a').forEach((a) => {
-      a.classList.toggle('active')
-    })
+function switchLanguage() {
+  // switch from one to the other language
+  if (state.language === 'english') {
+    // was EN switch to DE
+    state.language = 'deutsch'
+    document.querySelector('.deutsch').style.display = 'block'
+    document.querySelector('.english').style.display = 'none'
+  } else {
+    // was DE, switch to EN
+    state.language = 'english'
+    document.querySelector('.deutsch').style.display = 'none'
+    document.querySelector('.english').style.display = 'block'
+  }
+  document.querySelectorAll('#language-selection a').forEach((a) => {
+    a.classList.toggle('active')
+  })
 }
 
 let rem // font-size, assigned after load
@@ -101,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', (event) => {
   // fires when page fully loaded, including images
   // console.log('all loaded')
-  
+
   // overwrite inline css in <main> to hide text until bg loaded
   document.body.style.opacity = 1
 
@@ -139,36 +143,41 @@ window.addEventListener('load', (event) => {
 
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img) => {
-    // get original measure
-    const realSize = {
-      w: img.naturalWidth,
-      h: img.naturalHeight,
-    }
+    img.onload = (e) => {
+      // wait for img to be loaded
+      // get original measure
+      const realSize = {
+        w: img.naturalWidth,
+        h: img.naturalHeight,
+      }
+      console.log(`real size: ${realSize.w}, ${realSize.h}`)
 
-    // add class describing aspect ratio
-    if (realSize.w > realSize.h) {
-      img.classList.add('querformat')
-    } else if (realSize.w < realSize.h) {
-      img.classList.add('hochformat')
-    } else {
-      img.classList.add('quadrat')
-    }
+      // add class describing aspect ratio
+      console.log(`h: ${realSize.h}, w: ${realSize.w}`)
+      if (realSize.w > realSize.h) {
+        img.classList.add('querformat')
+      } else if (realSize.w < realSize.h) {
+        img.classList.add('hochformat')
+      } else {
+        img.classList.add('quadrat')
+      }
 
-    // how should the original measure be scaled down?
-    const scaleFactor = targetHeight / realSize.h
+      // how should the original measure be scaled down?
+      const scaleFactor = targetHeight / realSize.h
 
-    imgWidth = realSize.w * scaleFactor
-    imgHeight = targetHeight
+      imgWidth = realSize.w * scaleFactor
+      imgHeight = targetHeight
 
-    // set img attribute and css dimensions
-    img.width = imgWidth
-    img.height = imgHeight
-    console.log(`foo ${imgWidth}`)
-    img.setAttribute(
-      'style',
-      `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
-    )
-  })
+      // set img attribute and css dimensions
+      img.width = imgWidth
+      img.height = imgHeight
+      console.log(`foo ${imgWidth}`)
+      img.setAttribute(
+        'style',
+        `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
+      )
+    } // end img.load()
+  }) // end forEach()
 
   // const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
   const sliderHeight = targetHeight // image height + border
