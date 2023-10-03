@@ -150,10 +150,9 @@ window.addEventListener('load', (event) => {
         w: img.naturalWidth,
         h: img.naturalHeight,
       }
-      console.log(`real size: ${realSize.w}, ${realSize.h}`)
+      // console.log(`w: ${realSize.w}, h: ${realSize.h}`)
 
       // add class describing aspect ratio
-      console.log(`h: ${realSize.h}, w: ${realSize.w}`)
       if (realSize.w > realSize.h) {
         img.classList.add('querformat')
       } else if (realSize.w < realSize.h) {
@@ -171,7 +170,7 @@ window.addEventListener('load', (event) => {
       // set img attribute and css dimensions
       img.width = imgWidth
       img.height = imgHeight
-      console.log(`foo ${imgWidth}`)
+      // console.log(`foo ${imgWidth}`)
       img.setAttribute(
         'style',
         `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
@@ -240,7 +239,7 @@ window.addEventListener('load', (event) => {
           rodeoPic.style.background = 'black'
           rodeoPic.style.backgroundImage = 'none'
         }
-        console.log(`scrolled content to ${headerHeight}`)
+        // console.log(`scrolled content to ${headerHeight}`)
         // das führt zu einem Sprung!
         // obsolet, oder?
       }
