@@ -102,14 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 */
 
-// try prevent image caching (img size debug, oct 26 2023)
-const sliderPics = document.querySelectorAll('.slider-item')
-for (img of sliderPics) {
-  // add funny number i.e. the date to the source path
-  img.src = img.src + '?' + Date.now();
-  // console.log img.src
-}
-
 window.addEventListener('load', (event) => {
   // fires when page fully loaded, including images
   console.log('all loaded')
@@ -150,21 +142,45 @@ window.addEventListener('load', (event) => {
   console.log(targetHeight)
 
   const sliderImages = document.querySelectorAll('.slider-item img')
-  sliderImages.forEach((img) => {
-    img.src = img.src + '?' + Date.now();
-    console.log(img.src)
+  sliderImages.forEach((img, i) => {
+    // add number to slider items (debugging purposes)
+    const parent = img.parentElement
+    parent.style.position = 'relative'
+    const counter = document.createElement('p')
+    counter.innerText = i
+    parent.appendChild(counter)
+    counter.style.position = 'absolute'
+    counter.style.top = '0px'
+    counter.style.right = '0px'
+    counter.style.width = '20px'
+    counter.style.padding = '0 2px'
+    counter.style.fontSize = '10px'
+    counter.style.textAlign = 'right'
+    counter.style.background = parent.classList.contains('copy') ? 'black' : 'white'
+    counter.style.color = parent.classList.contains('copy') ? 'white' : 'black'
+    counter.style.zIndex = 1
+
+
+
+    // try adding date to path in order to circumvent cacheing
+    const time = Date.now()
+    img.src = img.src + '?' + time
+    // console.log(img.src)
+
+      // get filenames (for debugging purposes)
+      const re = /\w+\.png/
+      const name = img.src.match(re)
+      // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
+
     img.onload = (e) => {
+      const lTime = Date.now()
+      console.log(`${name} loaded after ${lTime-time} ms`)
       // wait for img to be loaded
       // get original measure
       const realSize = {
         w: img.naturalWidth,
         h: img.naturalHeight,
       }
-
-      // get filenames (for debugging purposes)
-      const re = /\w+\.png/
-      const name = img.src.match(re)
-      // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
 
       // add class describing aspect ratio
       if (realSize.w > realSize.h) {
