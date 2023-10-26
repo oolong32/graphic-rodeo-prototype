@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('load', (event) => {
   // fires when page fully loaded, including images
-  // console.log('all loaded')
+  console.log('all loaded')
 
   // overwrite inline css in <main> to hide text until bg loaded
   document.body.style.opacity = 1
@@ -150,7 +150,10 @@ window.addEventListener('load', (event) => {
         w: img.naturalWidth,
         h: img.naturalHeight,
       }
-      // console.log(`w: ${realSize.w}, h: ${realSize.h}`)
+
+      const re = /\w+\.png/
+      const name = img.src.match(re)
+      console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
 
       // add class describing aspect ratio
       if (realSize.w > realSize.h) {
