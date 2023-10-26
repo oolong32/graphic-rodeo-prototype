@@ -160,7 +160,7 @@ window.addEventListener('load', (event) => {
     counter.style.color = parent.classList.contains('copy') ? 'white' : 'black'
     counter.style.zIndex = 1
 
-
+/* WIE GEHT CSS Höhe? Wär doch gelacht, wenn das nicht läuft!!! */
 
     // try adding date to path in order to circumvent cacheing
     const time = Date.now()

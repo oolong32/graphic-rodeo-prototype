@@ -314,8 +314,9 @@ footer a {
 }
 
 img { /* preserve aspect ratio */
-  width: 100%;
-  height: auto;
+  /* width: 100%; */
+  /* height: auto; ist das der Fehler? */
+  height: 100%;
   width: var(--img-width);
   height: var(--img-height);
 }
