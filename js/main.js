@@ -102,6 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 */
 
+// try prevent image caching (img size debug, oct 26 2023)
+const sliderPics = document.querySelectorAll('.slider-item')
+for (img of sliderPics) {
+  // add funny number i.e. the date to the source path
+  img.src = img.src + '?' + Date.now();
+  // console.log img.src
+}
+
 window.addEventListener('load', (event) => {
   // fires when page fully loaded, including images
   console.log('all loaded')
@@ -143,6 +151,8 @@ window.addEventListener('load', (event) => {
 
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img) => {
+    img.src = img.src + '?' + Date.now();
+    console.log(img.src)
     img.onload = (e) => {
       // wait for img to be loaded
       // get original measure
@@ -151,9 +161,10 @@ window.addEventListener('load', (event) => {
         h: img.naturalHeight,
       }
 
+      // get filenames (for debugging purposes)
       const re = /\w+\.png/
       const name = img.src.match(re)
-      console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
+      // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
 
       // add class describing aspect ratio
       if (realSize.w > realSize.h) {
