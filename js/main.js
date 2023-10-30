@@ -122,9 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 */
 
+// try adding date to path in order to circumvent cacheing
+let imgs = document.querySelectorAll('#slider img')
+const time = Date.now()
+for (const img of imgs) {
+  img.src = img.src + '?' + time
+}
+
 window.addEventListener('load', (event) => {
-  // fires when page fully loaded, including images
+  // Fires when page fully loaded, including images.
   console.log('all loaded')
+  // Not however, the lazy loading images!
 
   // overwrite inline css in <main> to hide text until bg loaded
   document.body.style.opacity = 1
@@ -164,29 +172,24 @@ window.addEventListener('load', (event) => {
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img, i) => {
     // add counter to slider items (debugging purposes)
-    addCounter(img, i)
+    // addCounter(img, i)
 
     /* WIE GEHT CSS Höhe? Wär doch gelacht, wenn das nicht läuft!!! */
 
-    // try adding date to path in order to circumvent cacheing
-    const time = Date.now()
-    img.src = img.src + '?' + time
-    // console.log(img.src)
-
-    // get filenames (for debugging purposes)
-    const re = /\w+\.png/
-    const name = img.src.match(re)
-    // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
-
     img.onload = (e) => {
-      const lTime = Date.now()
-      console.log(`${name} loaded after ${lTime - time} ms`)
+      // const lTime = Date.now()
+      // console.log(`${name} loaded after ${lTime - time} ms`)
       // wait for img to be loaded
       // get original measure
       const realSize = {
         w: img.naturalWidth,
         h: img.naturalHeight,
       }
+
+      // get filenames (for debugging purposes)
+      // const re = /\w+\.png/
+      // const name = img.src.match(re)
+      // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
 
       // add class describing aspect ratio
       if (realSize.w > realSize.h) {
@@ -229,6 +232,7 @@ window.addEventListener('load', (event) => {
   // console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
   // 30.10.23, versuche beim Start zu beginnen
   slider.scrollBy(0, 0) // fires the scroll event!?
+  console.log('scrolled to 0')
 
   // handle scroll event
   document.addEventListener(

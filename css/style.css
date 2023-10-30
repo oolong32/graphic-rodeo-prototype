@@ -322,6 +322,7 @@ footer a {
   /* height: 100%; */
   width: var(--img-width);
   height: var(--img-height);
+  user-select: none; /* mühsames Geflacker in iOS Simulator */
 }
 
 img.landscape {
