@@ -9,6 +9,8 @@
   --black: #000000;
 }
 
+* { box-sizing: border-box; }
+
 body {
   color: var(--black);
   background: var(--white); 
@@ -276,7 +278,7 @@ footer a {
   left: 0;
   width: 100%;
   z-index: 100;
-  transform: translateY(var(--examples-offset));
+  /* transform: translateY(var(--examples-offset)); */
   transition: transform 0.4s ease-in;
   opacity: 0;
 }
@@ -314,9 +316,9 @@ footer a {
 }
 
 img { /* preserve aspect ratio */
-  /* width: 100%; */
+  width: 100%;
   /* height: auto; ist das der Fehler? */
-  height: 100%;
+  /* height: 100%; */
   width: var(--img-width);
   height: var(--img-height);
 }
