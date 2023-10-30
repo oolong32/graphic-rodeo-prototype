@@ -149,6 +149,21 @@ window.addEventListener('load', (event) => {
 
   const headerHeight = header.offsetHeight
 
+  // listen for transition of #examples
+  // should fire, when user scrolls enough
+  // see handler for scroll event further down
+  examples.addEventListener('transitionstart', () => {
+    console.log('examples sliding in')
+
+    // scroll to center of slider
+    // 30. Oktober 2023: warum?
+    // slider.scrollBy(-slider.scrollLeftMax / 2, 0) // fires the scroll event!?
+    // console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
+    // 30.10.23, versuche beim Start zu beginnen
+    slider.scrollBy(0, 0) // fires the scroll event!?
+    console.log('scrolled to 0')
+  })
+
   // adjust height of slider
   // height comes from min-width in css 🥲
   const sliderItemsArr = [...sliderItems] // spread node into array
@@ -225,14 +240,6 @@ window.addEventListener('load', (event) => {
   // und fürs padding
   document.body.setAttribute('style', `--slider-height: ${sliderHeight}px`)
   examples.setAttribute('style', `--examples-offset: ${sliderHeight}px`)
-
-  // scroll to center of slider
-  // 30. Oktober 2023: warum?
-  // slider.scrollBy(-slider.scrollLeftMax / 2, 0) // fires the scroll event!?
-  // console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
-  // 30.10.23, versuche beim Start zu beginnen
-  slider.scrollBy(0, 0) // fires the scroll event!?
-  console.log('scrolled to 0')
 
   // handle scroll event
   document.addEventListener(
