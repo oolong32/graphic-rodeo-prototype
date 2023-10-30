@@ -6,6 +6,7 @@ let sliderItems
 let scrolled = 0
 let scrollingUp = false
 let scrollingDown = false
+let rem // font-size, assigned after load
 
 const state = {
   locale: getLang(),
@@ -21,6 +22,7 @@ const state = {
   see https://web.dev/lazy-loading-images/#images-css
   no visible effect – probably same as without all this
 */
+
 /*
 document.addEventListener('DOMContentLoaded', () => {
   // fires when HTML parsed
@@ -169,10 +171,8 @@ window.addEventListener('load', (event) => {
     'scroll',
     (event) => {
       if (scrolled > sliderHeight) { // shouldn't this be viewportheight?
-        console.log(scrolled)
+        // console.log(scrolled)
         state.scrolled = true // so it has begun
-        console.log('scrolling slider starts now')
-        // this fires much too early!
       }
       // slider moves into viewport
       // bescheuert: weil wird jedesmal abgefragt. geht das besser?
@@ -233,7 +233,7 @@ window.addEventListener('load', (event) => {
         .reduce((a, b) => {
           return a + b + rem * 0.75
         })
-
+        console.log(sliderWidth)
       // translate scroll to slider
       // btw. what happens if slider is scrolled?
       // scrollHeight

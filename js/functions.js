@@ -51,13 +51,11 @@ function switchLanguage() {
   })
 }
 
-let rem // font-size, assigned after load
-
 function roundNumber(n) {
   return Math.round(n * 100) / 100
 }
 
-function addCounter(el, n) {
+function addCounter(el, n) { // number images in slider (for debugging)
   const parent = el.parentElement
   parent.style.position = 'relative'
   const counter = document.createElement('p')
