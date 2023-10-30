@@ -122,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 */
 
+console.clear()
+
 // try adding date to path in order to circumvent cacheing
 let imgs = document.querySelectorAll('#slider img')
 const time = Date.now()
@@ -160,7 +162,7 @@ window.addEventListener('load', (event) => {
     // slider.scrollBy(-slider.scrollLeftMax / 2, 0) // fires the scroll event!?
     // console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
     // 30.10.23, versuche beim Start zu beginnen
-    slider.scrollBy(0, 0) // fires the scroll event!?
+    slider.scrollBy(0, 0) // scroll to start
     console.log('scrolled to 0')
   })
 
@@ -245,8 +247,11 @@ window.addEventListener('load', (event) => {
   document.addEventListener(
     'scroll',
     (event) => {
-      if (scrolled > sliderHeight) {
+      if (scrolled > sliderHeight) { // shouldn't this be viewportheight?
+        console.log(scrolled)
         state.scrolled = true // so it has begun
+        console.log('scrolling slider starts now')
+        // this fires much too early!
       }
       // slider moves into viewport
       // bescheuert: weil wird jedesmal abgefragt. geht das besser?
