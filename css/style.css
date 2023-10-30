@@ -299,6 +299,7 @@ footer a {
   max-width: 100%;
   overflow-x: hidden;
   display: flex;
+  justify-content: flex-start;
   /* border-top: 0.75rem solid var(--white); */
   /* border-top: 1px solid white; */
   background: var(--white);
@@ -315,7 +316,7 @@ footer a {
   border-bottom: 0.75rem solid var(--white);
 }
 
-img { /* preserve aspect ratio */
+#slider-item img { /* preserve aspect ratio */
   width: 100%;
   /* height: auto; ist das der Fehler? */
   /* height: 100%; */

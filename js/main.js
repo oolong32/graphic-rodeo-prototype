@@ -57,6 +57,26 @@ function roundNumber(n) {
   return Math.round(n * 100) / 100
 }
 
+function addCounter(el, n) {
+  const parent = el.parentElement
+  parent.style.position = 'relative'
+  const counter = document.createElement('p')
+  counter.innerText = n
+  parent.appendChild(counter)
+  counter.style.position = 'absolute'
+  counter.style.top = '0px'
+  counter.style.right = '0px'
+  counter.style.width = '20px'
+  counter.style.padding = '0 2px'
+  counter.style.fontSize = '10px'
+  counter.style.textAlign = 'right'
+  counter.style.background = parent.classList.contains('copy')
+    ? 'black'
+    : 'white'
+  counter.style.color = parent.classList.contains('copy') ? 'white' : 'black'
+  counter.style.zIndex = 1
+}
+
 let header
 let rodeoPic
 let slider
@@ -143,38 +163,24 @@ window.addEventListener('load', (event) => {
 
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img, i) => {
-    // add number to slider items (debugging purposes)
-    const parent = img.parentElement
-    parent.style.position = 'relative'
-    const counter = document.createElement('p')
-    counter.innerText = i
-    parent.appendChild(counter)
-    counter.style.position = 'absolute'
-    counter.style.top = '0px'
-    counter.style.right = '0px'
-    counter.style.width = '20px'
-    counter.style.padding = '0 2px'
-    counter.style.fontSize = '10px'
-    counter.style.textAlign = 'right'
-    counter.style.background = parent.classList.contains('copy') ? 'black' : 'white'
-    counter.style.color = parent.classList.contains('copy') ? 'white' : 'black'
-    counter.style.zIndex = 1
+    // add counter to slider items (debugging purposes)
+    addCounter(img, i)
 
-/* WIE GEHT CSS Höhe? Wär doch gelacht, wenn das nicht läuft!!! */
+    /* WIE GEHT CSS Höhe? Wär doch gelacht, wenn das nicht läuft!!! */
 
     // try adding date to path in order to circumvent cacheing
     const time = Date.now()
     img.src = img.src + '?' + time
     // console.log(img.src)
 
-      // get filenames (for debugging purposes)
-      const re = /\w+\.png/
-      const name = img.src.match(re)
-      // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
+    // get filenames (for debugging purposes)
+    const re = /\w+\.png/
+    const name = img.src.match(re)
+    // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
 
     img.onload = (e) => {
       const lTime = Date.now()
-      console.log(`${name} loaded after ${lTime-time} ms`)
+      console.log(`${name} loaded after ${lTime - time} ms`)
       // wait for img to be loaded
       // get original measure
       const realSize = {
@@ -218,8 +224,11 @@ window.addEventListener('load', (event) => {
   examples.setAttribute('style', `--examples-offset: ${sliderHeight}px`)
 
   // scroll to center of slider
-  slider.scrollBy(-slider.scrollLeftMax / 2, 0) // fires the scroll event!?
+  // 30. Oktober 2023: warum?
+  // slider.scrollBy(-slider.scrollLeftMax / 2, 0) // fires the scroll event!?
   // console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
+  // 30.10.23, versuche beim Start zu beginnen
+  slider.scrollBy(0, 0) // fires the scroll event!?
 
   // handle scroll event
   document.addEventListener(
