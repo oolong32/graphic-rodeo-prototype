@@ -21,28 +21,7 @@ const state = {
   lazy loading of background image
   see https://web.dev/lazy-loading-images/#images-css
   no visible effect – probably same as without all this
-*/
-
-/*
-document.addEventListener('DOMContentLoaded', () => {
-  // fires when HTML parsed
-  //  but before CSS and images have beend loaded
-  console.log('html parsed')
-  const rodeoPic = document.getElementById('rodeo-pic')
-  if ("IntersectionObserver" in window) {
-    let lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          lazyBackgroundObserver.unobserve(entry.target);
-          console.log(entry)
-        }
-      });
-    });
-
-    lazyBackgroundObserver.observe(rodeoPic);
-  }
-})
+  2.11.23: fürs erste entfernt, ev. später wieder rein
 */
 
 console.clear()
@@ -56,7 +35,7 @@ for (const img of imgs) {
 
 window.addEventListener('load', (event) => {
   // Fires when page fully loaded, including images.
-  console.log('all loaded')
+  // console.log('all loaded')
   // Not however, the lazy loading images!
 
   // overwrite inline css in <main> to hide text until bg loaded
@@ -78,15 +57,8 @@ window.addEventListener('load', (event) => {
   // should fire, when user scrolls enough
   // see handler for scroll event further down
   examples.addEventListener('transitionstart', () => {
-    console.log('examples sliding in')
-
-    // scroll to center of slider
-    // 30. Oktober 2023: warum?
-    // slider.scrollBy(-slider.scrollLeftMax / 2, 0) // fires the scroll event!?
-    // console.log(`scrolled by ${slider.scrollLeftMax / 2}`)
-    // 30.10.23, versuche beim Start zu beginnen
+    // scroll to start, just in case
     slider.scrollBy(0, 0) // scroll to start
-    console.log('scrolled to 0')
   })
 
   // adjust height of slider
@@ -94,7 +66,7 @@ window.addEventListener('load', (event) => {
   const sliderItemsArr = [...sliderItems] // spread node into array
   const sliderItemsHeights = sliderItemsArr.map((item) => {
     return item.querySelector('img').offsetHeight // not the li, but the img in the li
-    // in my case (iphone SE) 152
+    // in my case (iphone SE): 152
   })
   // console.log(sliderItemsHeights)
 
@@ -107,7 +79,7 @@ window.addEventListener('load', (event) => {
   const margins = 0.75 * rem * 2
   const targetWidth = Math.trunc((window.innerWidth - margins) / 3)
   const targetHeight = targetWidth * Math.SQRT2
-  console.log(targetHeight)
+  // console.log(targetHeight)
 
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img, i) => {
@@ -116,17 +88,20 @@ window.addEventListener('load', (event) => {
     // addCounter(img, i)
 
     if (img.complete) { // img alredy loadedu
-      console.log(`${imgName(img)} already loaded`)
       sizeSliderImg(img, i, targetWidth, targetHeight) 
+      // add counter to slider items (debugging purposes)
+      // addCounter(img, i)
     } else {
       img.onload = (e) => {
         sizeSliderImg(img, i, targetWidth, targetHeight) 
-        
+        // add counter to slider items (debugging purposes)
+        // addCounter(img, i)
       } // end img.load()
     }
   }) // end forEach()
 
-  // const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
+  // const sliderHeight = Math.max(...sliderItemsHeights)
+  // spread array as arguments
   const sliderHeight = targetHeight // image height + border
   slider.setAttribute('style', `--slider-height: ${sliderHeight}px`)
   footer.setAttribute('style', `--slider-height: ${sliderHeight}px`)
@@ -203,7 +178,7 @@ window.addEventListener('load', (event) => {
         .reduce((a, b) => {
           return a + b + rem * 0.75
         })
-      console.log(sliderWidth)
+      // console.log(sliderWidth)
       // translate scroll to slider
       // btw. what happens if slider is scrolled?
       // scrollHeight
@@ -241,10 +216,6 @@ window.addEventListener('load', (event) => {
   slider.addEventListener('pointerenter', (event) => {
     event.preventDefault()
   })
-
-  // slider.addEventListener('scroll', (event) => {
-  // console.log(`slider-slide detected: ${scrolled}`)
-  // })
 
   // set language when first loaded
   setLanguage()

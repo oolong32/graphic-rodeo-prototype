@@ -82,19 +82,15 @@ function imgName(img) {
 }
 
 // process slider images
-
 function sizeSliderImg(img, i, targetWidth, targetHeight) {
-  // const lTime = Date.now()
-  // console.log(`${name} loaded after ${lTime - time} ms`)
-  // wait for img to be loaded
-  // get original measure
 
+  // get original measure
   const realSize = {
     w: img.naturalWidth,
     h: img.naturalHeight,
   }
 
-  console.log(`${imgName(img)} — w: ${realSize.w}, h: ${realSize.h}`)
+  // console.log(`${imgName(img)} — w: ${realSize.w}, h: ${realSize.h}`)
 
   // add class describing aspect ratio
   if (realSize.w > realSize.h) {
@@ -105,7 +101,7 @@ function sizeSliderImg(img, i, targetWidth, targetHeight) {
     img.classList.add('quadrat')
   }
 
-  // how should the original measure be scaled down?
+  // scale down original measure
   const scaleFactor = targetHeight / realSize.h
 
   imgWidth = realSize.w * scaleFactor
@@ -114,21 +110,7 @@ function sizeSliderImg(img, i, targetWidth, targetHeight) {
   // set img attribute and css dimensions
   img.width = imgWidth
   img.height = imgHeight
-  // console.log(`foo ${imgWidth}`)
 
-  // add counter to slider items (debugging purposes)
-  // after load …
-  addCounter(img, i)
-
-  // 2.11.23: crazy – folgendes scheint nicht immer zu passieren.
-  // möglicherweise wird onload-event teils übergangen?
-  // in diesem Fall sollte dieser Abschnitt nicht an
-  // diesen Event gekoppelt werde, oder?
-  // Möglich: onload passiert nicht, weil eh schon geladen?
-  // Andere Möglichkeit: Die Verschachtelung von
-  // img.onload und load
-  // und transitionstart!?
-  // ist wohl nicht so gut …?
   img.setAttribute(
     'style',
     `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
