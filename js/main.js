@@ -112,11 +112,13 @@ window.addEventListener('load', (event) => {
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img, i) => {
     // add counter to slider items (debugging purposes)
+    // before loaded …
     // addCounter(img, i)
 
     /* WIE GEHT CSS Höhe? Wär doch gelacht, wenn das nicht läuft!!! */
 
-    img.onload = (e) => {
+    // img.onload = (e) => {
+
       // const lTime = Date.now()
       // console.log(`${name} loaded after ${lTime - time} ms`)
       // wait for img to be loaded
@@ -129,7 +131,7 @@ window.addEventListener('load', (event) => {
       // get filenames (for debugging purposes)
       // const re = /\w+\.png/
       // const name = img.src.match(re)
-      // console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
+      console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
 
       // add class describing aspect ratio
       if (realSize.w > realSize.h) {
@@ -150,11 +152,22 @@ window.addEventListener('load', (event) => {
       img.width = imgWidth
       img.height = imgHeight
       // console.log(`foo ${imgWidth}`)
+
+      // add counter to slider items (debugging purposes)
+      // after load …
+      addCounter(img, i)
+
+      
+      // 2.11.23: crazy – folgendes scheint nicht immer zu passieren.
+      // möglicherweise wird onload-event teils übergangen?
+      // in diesem Fall sollte dieser Abschnitt nicht an 
+      // diesen Event gekoppelt werde, oder?
+      // Möglich: onload passiert nicht, weil eh schon geladen?
       img.setAttribute(
         'style',
         `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
       )
-    } // end img.load()
+    // } // end img.load()
   }) // end forEach()
 
   // const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments

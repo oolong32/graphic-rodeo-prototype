@@ -5,8 +5,7 @@
   text-rendering: optimizeLegibility;
   --red: #828282;
   --header-fg: black;
-  /* --white: #ffffff; */
-  --white: tomato;
+  --white: #ffffff;
   --black: #000000;
 }
 
@@ -317,9 +316,9 @@ footer a {
   border-bottom: 0.75rem solid var(--white);
 }
 
-#slider-item img { /* preserve aspect ratio */
-  width: 100%;
-  /* height: auto; ist das der Fehler? */
+.slider-item img { /* preserve aspect ratio */
+  width: 100%; /* Fallback */
+  height: auto; /* Fallback */
   /* height: 100%; */
   width: var(--img-width);
   height: var(--img-height);

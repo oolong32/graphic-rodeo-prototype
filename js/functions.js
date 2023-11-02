@@ -59,12 +59,11 @@ function addCounter(el, n) { // number images in slider (for debugging)
   const parent = el.parentElement
   parent.style.position = 'relative'
   const counter = document.createElement('p')
-  counter.innerText = n
+  counter.innerHTML = `<small>Nr. ${n}<br>w: ${el.width}, h:${el.height}<br>complete: ${el.complete}</small>`
   parent.appendChild(counter)
   counter.style.position = 'absolute'
-  counter.style.top = '0px'
+  counter.style.bottom = '0px'
   counter.style.right = '0px'
-  counter.style.width = '20px'
   counter.style.padding = '0 2px'
   counter.style.fontSize = '10px'
   counter.style.textAlign = 'right'
