@@ -5,7 +5,8 @@
   text-rendering: optimizeLegibility;
   --red: #828282;
   --header-fg: black;
-  --white: #ffffff;
+  /* --white: #ffffff; */
+  --white: tomato;
   --black: #000000;
 }
 
