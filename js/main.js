@@ -188,13 +188,13 @@ window.addEventListener('load', (event) => {
       // scrollTopMax
       // scrollWidth
 
-      slider.scrollBy(scrollDifference, 0)
+      slider.scrollBy({left: scrollDifference, top: 0, behaviour: 'smooth'})
       if (scrollingDown && slider.scrollLeft >= sliderWidth / 2) {
         // reset, when half through
-        slider.scrollTo(0, 0)
+        slider.scrollTo({left: 0, top: 0, behaviour: 'smooth'})
       }
       if (scrollingUp && slider.scrollLeft === 0) {
-        slider.scrollBy(sliderWidth / 2, 0)
+        slider.scrollBy({left: sliderWidth / 2, top: 0, behaviour: 'smooth'})
       }
 
       // handle header visibility
