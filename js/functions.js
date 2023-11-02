@@ -55,7 +55,8 @@ function roundNumber(n) {
   return Math.round(n * 100) / 100
 }
 
-function addCounter(el, n) { // number images in slider (for debugging)
+function addCounter(el, n) {
+  // number images in slider (for debugging)
   const parent = el.parentElement
   parent.style.position = 'relative'
   const counter = document.createElement('p')
@@ -72,4 +73,64 @@ function addCounter(el, n) { // number images in slider (for debugging)
     : 'white'
   counter.style.color = parent.classList.contains('copy') ? 'white' : 'black'
   counter.style.zIndex = 1
+}
+
+// get filenames (for debugging purposes)
+function imgName(img) {
+  const re = /\w+\.png/
+  return img.src.match(re)
+}
+
+// process slider images
+
+function sizeSliderImg(img, i, targetWidth, targetHeight) {
+  // const lTime = Date.now()
+  // console.log(`${name} loaded after ${lTime - time} ms`)
+  // wait for img to be loaded
+  // get original measure
+
+  const realSize = {
+    w: img.naturalWidth,
+    h: img.naturalHeight,
+  }
+
+  console.log(`${imgName(img)} — w: ${realSize.w}, h: ${realSize.h}`)
+
+  // add class describing aspect ratio
+  if (realSize.w > realSize.h) {
+    img.classList.add('querformat')
+  } else if (realSize.w < realSize.h) {
+    img.classList.add('hochformat')
+  } else {
+    img.classList.add('quadrat')
+  }
+
+  // how should the original measure be scaled down?
+  const scaleFactor = targetHeight / realSize.h
+
+  imgWidth = realSize.w * scaleFactor
+  imgHeight = targetHeight
+
+  // set img attribute and css dimensions
+  img.width = imgWidth
+  img.height = imgHeight
+  // console.log(`foo ${imgWidth}`)
+
+  // add counter to slider items (debugging purposes)
+  // after load …
+  addCounter(img, i)
+
+  // 2.11.23: crazy – folgendes scheint nicht immer zu passieren.
+  // möglicherweise wird onload-event teils übergangen?
+  // in diesem Fall sollte dieser Abschnitt nicht an
+  // diesen Event gekoppelt werde, oder?
+  // Möglich: onload passiert nicht, weil eh schon geladen?
+  // Andere Möglichkeit: Die Verschachtelung von
+  // img.onload und load
+  // und transitionstart!?
+  // ist wohl nicht so gut …?
+  img.setAttribute(
+    'style',
+    `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
+  )
 }

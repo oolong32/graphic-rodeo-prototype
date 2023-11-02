@@ -115,59 +115,15 @@ window.addEventListener('load', (event) => {
     // before loaded …
     // addCounter(img, i)
 
-    /* WIE GEHT CSS Höhe? Wär doch gelacht, wenn das nicht läuft!!! */
-
-    // img.onload = (e) => {
-
-      // const lTime = Date.now()
-      // console.log(`${name} loaded after ${lTime - time} ms`)
-      // wait for img to be loaded
-      // get original measure
-      const realSize = {
-        w: img.naturalWidth,
-        h: img.naturalHeight,
-      }
-
-      // get filenames (for debugging purposes)
-      // const re = /\w+\.png/
-      // const name = img.src.match(re)
-      console.log(`${name} — w: ${realSize.w}, h: ${realSize.h}`)
-
-      // add class describing aspect ratio
-      if (realSize.w > realSize.h) {
-        img.classList.add('querformat')
-      } else if (realSize.w < realSize.h) {
-        img.classList.add('hochformat')
-      } else {
-        img.classList.add('quadrat')
-      }
-
-      // how should the original measure be scaled down?
-      const scaleFactor = targetHeight / realSize.h
-
-      imgWidth = realSize.w * scaleFactor
-      imgHeight = targetHeight
-
-      // set img attribute and css dimensions
-      img.width = imgWidth
-      img.height = imgHeight
-      // console.log(`foo ${imgWidth}`)
-
-      // add counter to slider items (debugging purposes)
-      // after load …
-      addCounter(img, i)
-
-      
-      // 2.11.23: crazy – folgendes scheint nicht immer zu passieren.
-      // möglicherweise wird onload-event teils übergangen?
-      // in diesem Fall sollte dieser Abschnitt nicht an 
-      // diesen Event gekoppelt werde, oder?
-      // Möglich: onload passiert nicht, weil eh schon geladen?
-      img.setAttribute(
-        'style',
-        `--img-width: ${imgWidth}px; --img-height ${imgHeight}px`
-      )
-    // } // end img.load()
+    if (img.complete) { // img alredy loadedu
+      console.log(`${imgName(img)} already loaded`)
+      sizeSliderImg(img, i, targetWidth, targetHeight) 
+    } else {
+      img.onload = (e) => {
+        sizeSliderImg(img, i, targetWidth, targetHeight) 
+        
+      } // end img.load()
+    }
   }) // end forEach()
 
   // const sliderHeight = Math.max(...sliderItemsHeights) // spread array as arguments
@@ -183,7 +139,8 @@ window.addEventListener('load', (event) => {
   document.addEventListener(
     'scroll',
     (event) => {
-      if (scrolled > sliderHeight) { // shouldn't this be viewportheight?
+      if (scrolled > sliderHeight) {
+        // shouldn't this be viewportheight?
         // console.log(scrolled)
         state.scrolled = true // so it has begun
       }
@@ -246,7 +203,7 @@ window.addEventListener('load', (event) => {
         .reduce((a, b) => {
           return a + b + rem * 0.75
         })
-        console.log(sliderWidth)
+      console.log(sliderWidth)
       // translate scroll to slider
       // btw. what happens if slider is scrolled?
       // scrollHeight
