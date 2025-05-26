@@ -13,7 +13,7 @@
 
 body {
   color: var(--black);
-  background: var(--white); 
+  background: var(--white);
 }
 
 div#content {
@@ -333,6 +333,8 @@ aside#desktop-nothing {
   display: none;
 }
 
+/*
+
 @media (min-width: 800px) {
   body {
     background: none;
@@ -380,4 +382,8 @@ aside#desktop-nothing {
   aside#desktop-nothing #desktop-logo path {
     fill: var(--black);
   }
+}
+*/
+@media (min-width: 800px) {
+
 }
