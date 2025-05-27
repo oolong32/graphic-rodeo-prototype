@@ -82,7 +82,7 @@ window.addEventListener('load', (event) => {
   let targetWidth
   let targetHeight
   if ( window.innerWidth > 800) { // should go in a function and happen on resize, too
-    targetWidth = Math.trunc((window.innerWidth - margins) / 7) // good for Mobile
+    targetWidth = Math.trunc((window.innerWidth - margins) / 10) // good for Mobile
     targetHeight = targetWidth * Math.SQRT2 // DIN-A Aspect-Ratio
   } else {
     targetWidth = Math.trunc((window.innerWidth - margins) / 3) // good for Mobile
