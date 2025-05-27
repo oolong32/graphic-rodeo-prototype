@@ -402,11 +402,12 @@ aside#desktop-nothing {
     }
     */
   }
-  header, aside#rodeo-pic, footer, #content, main, #slider {
-    min-width: 60vw;
-    max-width: 60vw; /*komplett bescheuert oder was?*/
+  header, footer, main, #slider {
+    min-width: 80vw;
+    max-width: 80vw; /*komplett bescheuert oder was?*/
     margin: 0 auto;
   }
+  header { width: 100%; max-width:100vw;  }
   body {
     background: black;
     /* rodeoPic.style.background = 'black' main.js, 60 */
@@ -414,8 +415,11 @@ aside#desktop-nothing {
  aside#rodeo-pic {
   left: auto;
   margin: 0 auto; /* Greift aus unerklärlichen gründen nicht. */
-  left: 20vw;
+  /* left: 20vw; */
  }
+div#content {
+    background: black;
+}
 #content.got-to-top {
     position: relative;
     margin: 0 auto;
