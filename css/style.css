@@ -392,21 +392,9 @@ aside#desktop-nothing {
 }
 */
 @media (min-width: 800px) {
-  body {
-    /* width: 60vw; */
-  }
-
-  #slider {
-    /*
-    #slider {
-      height: calc(var(--slider-height) + 1.25rem);
-    }
-    */
-  }
   header,
   footer,
-  main,
-  #slider {
+  main {
     width: 80vw;
     margin: 0 auto;
   }
@@ -415,7 +403,7 @@ aside#desktop-nothing {
     max-width: 100vw;
   }
   body {
-    background: black;
+    /* background: black; */
     /* rodeoPic.style.background = 'black' main.js, 60 */
   }
   aside#rodeo-pic {
@@ -424,27 +412,23 @@ aside#desktop-nothing {
     /* left: 20vw; */
   }
   div#content {
-    background: black;
+    /* background: black; */
   }
   #content.got-to-top {
     position: relative;
     margin: 0 auto;
   }
   header {
-    padding: 0 10vw;
+    padding: 0;
   }
   header #header-logo {
     height: 60px;
   }
 
   #text-column {
-    padding-bottom: 1rem;
+    padding-bottom: 1rem; /* nur nötig, wenn hintergrund dunkel */
   }
 
-  #examples {
-    left: auto;
-    margin-left: -1rem;
-  }
   /*
     sobald content oben anschlägt, kriegt er die Klasse «got-to-top» und wird absolut positioniert.
   */
