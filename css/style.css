@@ -1,7 +1,7 @@
 :root {
   font-size: 110%;
   line-height: 1.4;
-  font-family: "GerstnerProgWebRegular";
+  font-family: 'GerstnerProgWebRegular';
   text-rendering: optimizeLegibility;
   --red: #828282;
   --header-fg: black;
@@ -9,7 +9,9 @@
   --black: #000000;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: var(--black);
@@ -94,7 +96,7 @@ header h1 {
   display: none;
   font-size: 2rem;
   color: var(--red);
-  font-family: "GerstnerProgWebMedium";
+  font-family: 'GerstnerProgWebMedium';
   margin: 0;
 }
 
@@ -163,10 +165,10 @@ ol {
 }
 
 h2 {
-  font-family: "GerstnerProgWebMedium";
+  font-family: 'GerstnerProgWebMedium';
   font-size: 0.75rem;
   text-transform: uppercase;
-  font-feature-settings: "cpsp" on, "case" on;
+  font-feature-settings: 'cpsp' on, 'case' on;
   border-top: var(--black) solid 1px;
   margin-top: 3.6rem;
   padding-top: 0.3rem;
@@ -182,7 +184,7 @@ li {
 
 em,
 i {
-  font-family: "GerstnerProgWebItalic";
+  font-family: 'GerstnerProgWebItalic';
 }
 
 .spaced-out {
@@ -272,7 +274,8 @@ footer a {
   margin: 0;
 }
 
-#examples { /* Bild-Leiste */
+#examples {
+  /* Bild-Leiste */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -283,7 +286,8 @@ footer a {
   opacity: 0;
 }
 
-.got-to-top #examples { /* show slider when header hits top */
+.got-to-top #examples {
+  /* show slider when header hits top */
   transform: translateY(0);
   display: block;
   opacity: 1;
@@ -316,7 +320,8 @@ footer a {
   border-bottom: 0.75rem solid var(--white);
 }
 
-.slider-item img { /* preserve aspect ratio */
+.slider-item img {
+  /* preserve aspect ratio */
   width: 100%; /* Fallback */
   height: auto; /* Fallback */
   /* height: 100%; */
@@ -326,7 +331,7 @@ footer a {
 }
 
 img.landscape {
- border: 1px solid red;
+  border: 1px solid red;
 }
 
 aside#desktop-nothing {
@@ -386,4 +391,41 @@ aside#desktop-nothing {
 */
 @media (min-width: 800px) {
 
+  body  {
+    /* width: 60vw; */
+  }
+
+  #slider {
+    /*
+    #slider {
+      height: calc(var(--slider-height) + 1.25rem);
+    }
+    */
+  }
+  header, aside#rodeo-pic, footer, #content, main, #slider {
+    min-width: 60vw;
+    max-width: 60vw; /*komplett bescheuert oder was?*/
+    margin: 0 auto;
+  }
+  body {
+    background: black;
+    /* rodeoPic.style.background = 'black' main.js, 60 */
+  }
+ aside#rodeo-pic {
+  left: auto;
+  margin: 0 auto; /* Greift aus unerklärlichen gründen nicht. */
+  left: 20vw;
+ }
+#content.got-to-top {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  #examples {
+    left: auto;
+    margin-left: -1rem;
+  }
+  /*
+    sobald content oben anschlägt, kriegt er die Klasse «got-to-top» und wird absolut positioniert.
+  */
 }
