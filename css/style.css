@@ -5,8 +5,9 @@
   text-rendering: optimizeLegibility;
   --red: #828282;
   --header-fg: black;
-  --white: #ffffff;
+  --white: rgb(245, 245, 245);
   --black: #000000;
+  --button-bg: rgb(0, 200, 150);
 }
 
 * {
@@ -262,10 +263,11 @@ footer a {
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
-  border: 1px solid var(--black);
-  border-radius: 0.5rem;
+  /* border: 1px solid var(--black); */
+  /* border-radius: 0.5rem; */
   padding: 0.3rem 0 0.3rem;
   margin: 0 auto 2rem;
+  background-color: var(--button-bg);
 }
 #download-button {
   text-align: center;
@@ -390,8 +392,7 @@ aside#desktop-nothing {
 }
 */
 @media (min-width: 800px) {
-
-  body  {
+  body {
     /* width: 60vw; */
   }
 
@@ -402,27 +403,42 @@ aside#desktop-nothing {
     }
     */
   }
-  header, footer, main, #slider {
-    min-width: 80vw;
-    max-width: 80vw; /*komplett bescheuert oder was?*/
+  header,
+  footer,
+  main,
+  #slider {
+    width: 80vw;
     margin: 0 auto;
   }
-  header { width: 100%; max-width:100vw;  }
+  header {
+    width: 100%;
+    max-width: 100vw;
+  }
   body {
     background: black;
     /* rodeoPic.style.background = 'black' main.js, 60 */
   }
- aside#rodeo-pic {
-  left: auto;
-  margin: 0 auto; /* Greift aus unerklärlichen gründen nicht. */
-  /* left: 20vw; */
- }
-div#content {
+  aside#rodeo-pic {
+    left: auto;
+    margin: 0 auto; /* Greift aus unerklärlichen gründen nicht. */
+    /* left: 20vw; */
+  }
+  div#content {
     background: black;
-}
-#content.got-to-top {
+  }
+  #content.got-to-top {
     position: relative;
     margin: 0 auto;
+  }
+  header {
+    padding: 0 10vw;
+  }
+  header #header-logo {
+    height: 60px;
+  }
+
+  #text-column {
+    padding-bottom: 1rem;
   }
 
   #examples {
