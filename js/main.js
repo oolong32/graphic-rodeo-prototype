@@ -77,9 +77,18 @@ window.addEventListener('load', (event) => {
 
   // width for portrait img = third of viewport minus borders
   const margins = 0.75 * rem * 2
-  const targetWidth = Math.trunc((window.innerWidth - margins) / 3)
-  const targetHeight = targetWidth * Math.SQRT2
-  // console.log(targetHeight)
+
+  /* 27.5.2025: Versuch: Viewport messen, Desktop -> schmalere Bilder */
+  let targetWidth
+  let targetHeight
+  if ( window.innerWidth > 800) {
+    targetWidth = Math.trunc((window.innerWidth - margins) / 7) // good for Mobile
+    targetHeight = targetWidth * Math.SQRT2 // DIN-A Aspect-Ratio
+  } else {
+    targetWidth = Math.trunc((window.innerWidth - margins) / 3) // good for Mobile
+    targetHeight = targetWidth * Math.SQRT2 // DIN-A Aspect-Ratio
+  }
+  console.log(targetHeight)
 
   const sliderImages = document.querySelectorAll('.slider-item img')
   sliderImages.forEach((img, i) => {
@@ -88,12 +97,12 @@ window.addEventListener('load', (event) => {
     // addCounter(img, i)
 
     if (img.complete) { // img alredy loadedu
-      sizeSliderImg(img, i, targetWidth, targetHeight) 
+      sizeSliderImg(img, i, targetWidth, targetHeight)
       // add counter to slider items (debugging purposes)
       // addCounter(img, i)
     } else {
       img.onload = (e) => {
-        sizeSliderImg(img, i, targetWidth, targetHeight) 
+        sizeSliderImg(img, i, targetWidth, targetHeight)
         // add counter to slider items (debugging purposes)
         // addCounter(img, i)
       } // end img.load()
