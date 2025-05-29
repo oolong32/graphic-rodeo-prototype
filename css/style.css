@@ -33,10 +33,10 @@ div#content {
 aside#rodeo-pic {
   height: 100vh; /* fallback */
   height: var(--rodeo-pic-height);
-  background: url(/assets/img/rodeo.jpg);
-  background: url(/assets/img/KV_graphic_rodeo.jpg);
+  /* background: url(/assets/img/rodeo.jpg); */
+  background: url(/assets/img/Key_graphic_rodeo.jpg);
   background-size: cover;
-  background-position: top right;
+  background-position: top center;
   position: fixed;
   top: 0;
   left: 0;
@@ -184,6 +184,11 @@ li {
   letter-spacing: 0.025rem;
 }
 
+/* 29.5.25, mittelachse */
+article h2 {
+  text-align: center;
+}
+
 em,
 i {
   font-family: 'GerstnerProgWebItalic';
@@ -266,7 +271,7 @@ footer a {
   width: 100%;
   /* border: 1px solid var(--black); */
   /* border-radius: 0.5rem; */
-  padding: 0.3rem 0 0.3rem;
+  padding: 0.3rem 0 0.1rem;
   margin: 0 auto 2rem;
   background-color: var(--button-bg);
 }
@@ -393,6 +398,9 @@ aside#desktop-nothing {
 }
 */
 @media (min-width: 800px) {
+  :root {
+    font-size: 140%;
+  }
   header,
   footer,
   main {
@@ -430,6 +438,14 @@ aside#desktop-nothing {
     padding-bottom: 1rem; /* nur nötig, wenn hintergrund dunkel */
   }
 
+article p {
+  text-align: center;
+}
+
+section.buttons {
+  display: flex;
+  gap: 1rem;
+}
   /*
     sobald content oben anschlägt, kriegt er die Klasse «got-to-top» und wird absolut positioniert.
   */
