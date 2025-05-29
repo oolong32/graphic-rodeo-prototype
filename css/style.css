@@ -34,8 +34,9 @@ aside#rodeo-pic {
   height: 100vh; /* fallback */
   height: var(--rodeo-pic-height);
   background: url(/assets/img/rodeo.jpg);
+  background: url(/assets/img/KV_graphic_rodeo.jpg);
   background-size: cover;
-  background-position: top center;
+  background-position: top right;
   position: fixed;
   top: 0;
   left: 0;
