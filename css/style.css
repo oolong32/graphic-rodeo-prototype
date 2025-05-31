@@ -78,8 +78,10 @@ header {
   top: 0;
 }
 
+header,
 header #header-logo {
-  background: var(--white);
+  /* background: var(--white); */
+  background: white;
 }
 header #header-logo rect,
 header #header-logo path {
@@ -314,7 +316,8 @@ footer a {
   justify-content: flex-start;
   /* border-top: 0.75rem solid var(--white); */
   /* border-top: 1px solid white; */
-  background: var(--white);
+  /* background: var(--white); */
+  background: white;
 }
 
 .slider-item {
@@ -324,8 +327,10 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-right: 0.75rem solid var(--white);
-  border-bottom: 0.75rem solid var(--white);
+  /* border-right: 0.75rem solid var(--white);
+  border-bottom: 0.75rem solid var(--white); */
+  border-right: 0.75rem solid white;
+  border-bottom: 0.75rem solid white;
 }
 
 .slider-item img {
