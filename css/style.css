@@ -186,6 +186,11 @@ li {
   letter-spacing: 0.025rem;
 }
 
+.border-p, .border-small {
+  border-top: var(--black) solid 1px;
+  padding-top: 0.5rem;
+}
+
 /* 29.5.25, mittelachse */
 article h2 {
   text-align: center;
@@ -206,7 +211,7 @@ i {
 .lead {
   border-top: 1px solid var(--black);
   padding-top: 1rem;
-  font-size: 1.25rem;
+  font-size: 2rem;
   line-height: 1.2;
   color: var(--red);
   text-align: center;
@@ -274,7 +279,7 @@ footer a {
   /* border: 1px solid var(--black); */
   /* border-radius: 0.5rem; */
   padding: 0.3rem 0 0.1rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
   background-color: var(--button-bg);
 }
 #download-button {
