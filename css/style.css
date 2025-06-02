@@ -5,9 +5,11 @@
   text-rendering: optimizeLegibility;
   --red: #828282;
   --header-fg: black;
-  --white: rgb(245, 245, 245);
+  --white: rgb(235, 235, 235);
   --black: #000000;
-  --button-bg: rgb(0, 200, 150);
+  --button-bg-green: rgb(80, 220, 130);
+  --button-bg-blue: rgb(80, 130, 220);
+  --button-bg-red: rgb(220, 80, 80);
 }
 
 * {
@@ -277,21 +279,24 @@ footer a {
   text-decoration: none;
 }
 
-.download-button-link {
+.button {
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
-  /* border: 1px solid var(--black); */
-  /* border-radius: 0.5rem; */
   padding: 0.3rem 0 0.1rem;
   margin: 0 auto 1rem;
-  background-color: var(--button-bg);
-}
-#download-button {
   text-align: center;
   font-size: 1.5rem;
   line-height: 1.5;
+}
+.blue-button { background-color: var(--button-bg-blue); }
+.red-button { background-color: var(--button-bg-red); }
+.green-button { background-color: var(--button-bg-green); }
+.button-text {
+  color: white;
   margin: 0;
+      font-family: "GerstnerProgWebLight";
+      letter-spacing: 0.0625rem;
 }
 
 #examples {
