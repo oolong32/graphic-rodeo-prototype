@@ -483,6 +483,7 @@ article p:not(lead) {
 section.buttons {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
   /*
     sobald content oben anschlägt, kriegt er die Klasse «got-to-top» und wird absolut positioniert.
