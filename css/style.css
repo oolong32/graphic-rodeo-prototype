@@ -247,6 +247,10 @@ ul + .lead {
   color: var(--red);
 }
 
+.align-left {
+  text-align: left;
+}
+
 /* h2 + .lead, */
 /* h2 + .partner-list { */
   /* border-top: none; */
