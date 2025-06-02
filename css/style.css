@@ -121,6 +121,7 @@ a {
 
 #language-switch {
   display: inline-block;
+  display: none;
   padding: 0 1rem;
   align-self: center;
   text-align: right;
@@ -218,6 +219,7 @@ i {
 .lead {
   border-top: 1px solid var(--black);
   padding-top: 1rem;
+  margin-top: 3rem;
   font-size: 2rem;
   line-height: 1.2;
   color: var(--red);
@@ -253,6 +255,10 @@ footer,
   font-size: 0.75rem;
   line-height: 1.4;
   letter-spacing: 0.05rem;
+}
+
+.half-pixel-spacing {
+  letter-spacing: 0.03215rem;
 }
 
 footer {
@@ -460,6 +466,10 @@ aside#desktop-nothing {
 
 article p {
   text-align: center;
+  font-family: "GerstnerProgWebLight";
+}
+article p.lead {
+  font-family: "GerstnerProgWebRegular";
 }
 
 section.buttons {
