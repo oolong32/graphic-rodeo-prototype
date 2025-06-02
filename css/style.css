@@ -430,7 +430,7 @@ aside#desktop-nothing {
   header,
   footer,
   main {
-    width: 80vw;
+    width: 75vw;
     margin: 0 auto;
   }
   header {
@@ -466,10 +466,14 @@ aside#desktop-nothing {
 
 article p {
   text-align: center;
-  font-family: "GerstnerProgWebLight";
 }
 article p.lead {
   font-family: "GerstnerProgWebRegular";
+}
+
+article p:not(lead) {
+  font-family: "GerstnerProgWebLight";
+  letter-spacing: 0.03125rem;
 }
 
 section.buttons {
