@@ -181,6 +181,11 @@ h2 {
   color: var(--red);
 }
 
+hr {
+  border: none;
+  border: var(--black) solid 0.5px;
+}
+
 p,
 li {
   letter-spacing: 0.025rem;
@@ -235,11 +240,11 @@ ul + .lead {
   color: var(--red);
 }
 
-h2 + .lead,
-h2 + .partner-list {
-  border-top: none;
-  padding-top: 0;
-}
+/* h2 + .lead, */
+/* h2 + .partner-list { */
+  /* border-top: none; */
+  /* padding-top: 0; */
+/* } */
 
 footer,
 .small {
