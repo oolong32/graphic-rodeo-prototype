@@ -194,6 +194,7 @@ li {
   letter-spacing: 0.025rem;
 }
 
+
 .border-p, .border-small {
   border-top: var(--black) solid 1px;
   padding-top: 0.5rem;
@@ -226,6 +227,8 @@ i {
   text-align: center;
   hyphens: manual;
 }
+
+.border-p { margin-top: 3rem; }
 
 .lead:first-of-type {
   padding-top: 2rem;
