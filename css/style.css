@@ -36,7 +36,7 @@ aside#rodeo-pic {
   height: 100vh; /* fallback */
   height: var(--rodeo-pic-height);
   /* background: url(/assets/img/rodeo.jpg); */
-  /* background: url(/assets/img/Key_graphic_rodeo.jpg); */
+  /* background: url(/assets/im/logog/Key_graphic_rodeo.jpg); */
   background: url(/assets/img/Schema.svg);
   background-size: cover;
   background-position: center center;
@@ -304,7 +304,8 @@ footer #footer-links {
 }
 
 .partner-logo {
-  width: 30vw;
+  min-width: 40vw;
+  max-width: 50vw;
   margin: 0;
 }
 
@@ -501,7 +502,9 @@ article p.lead {
 }
 
 .partner-logo {
+  min-width: 15vw;
   width: 15vw;
+  max-width: 15vw;
 }
 
 footer p:last-of-type,
