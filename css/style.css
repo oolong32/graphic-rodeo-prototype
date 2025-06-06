@@ -36,9 +36,12 @@ aside#rodeo-pic {
   height: 100vh; /* fallback */
   height: var(--rodeo-pic-height);
   /* background: url(/assets/img/rodeo.jpg); */
-  background: url(/assets/img/Key_graphic_rodeo.jpg);
+  /* background: url(/assets/img/Key_graphic_rodeo.jpg); */
+  background: url(/assets/img/Schema.svg);
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -288,6 +291,25 @@ footer #footer-links {
   top: 0.25rem;
 }
 
+.partner-logos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 0;
+}
+
+.partner-logo {
+  width: 30vw;
+  margin: 0;
+}
+
+.partner-logo img { margin: 0; padding: 0; }
+
 footer a {
   text-decoration: none;
 }
@@ -476,6 +498,10 @@ article p {
 }
 article p.lead {
   font-family: "GerstnerProgWebRegular";
+}
+
+.partner-logo {
+  width: 15vw;
 }
 
 footer p:last-of-type,
