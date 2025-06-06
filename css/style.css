@@ -7,9 +7,12 @@
   --header-fg: black;
   --white: rgb(235, 235, 235);
   --black: #000000;
-  --button-bg-green: rgb(80, 220, 130);
+  /* --button-bg-green: rgb(80, 220, 130);
   --button-bg-blue: rgb(80, 130, 220);
-  --button-bg-red: rgb(220, 80, 80);
+  --button-bg-red: rgb(220, 80, 80); */
+  --button-bg-green: #000;
+  --button-bg-blue: #000;
+  --button-bg-red: #000;
 }
 
 * {
