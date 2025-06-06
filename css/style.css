@@ -301,6 +301,8 @@ footer #footer-links {
   justify-content: flex-start;
   align-items: flex-start;
   line-height: 0;
+  transform-origin: 0% 0%;
+  transform: scale(1.05);
 }
 
 .partner-logo {
@@ -309,8 +311,6 @@ footer #footer-links {
   margin: 0;
   position: relative;
   left: -1vw;
-  transform-origin: 0% 0%;
-  transform: scale(1.2);
 }
 
 .partner-logo img { margin: 0; padding: 0; }
