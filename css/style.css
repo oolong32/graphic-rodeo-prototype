@@ -235,7 +235,7 @@ i {
   hyphens: manual;
 }
 
-.border-p { margin-top: 3rem; }
+.border-p { margin-top: 3.5rem; }
 
 .lead:first-of-type {
   padding-top: 2rem;
@@ -243,7 +243,6 @@ i {
   border-top: none;
 }
 
-p + p.border-p,
 p + .lead,
 ul + .lead {
   padding-top: 3rem;
@@ -531,6 +530,7 @@ section.buttons {
 .lead {
   margin-top: 5rem;
 }
+.border-p { margin-top: 5rem; }
 
   /*
     sobald content oben anschlägt, kriegt er die Klasse «got-to-top» und wird absolut positioniert.
