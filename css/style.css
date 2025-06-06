@@ -243,6 +243,7 @@ i {
   border-top: none;
 }
 
+p + p.border-p,
 p + .lead,
 ul + .lead {
   padding-top: 3rem;
