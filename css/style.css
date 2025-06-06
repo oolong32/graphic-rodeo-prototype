@@ -226,7 +226,7 @@ i {
 .lead {
   border-top: 1px solid var(--black);
   padding-top: 1rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   font-size: 2rem;
   line-height: 1.2;
   color: var(--red);
@@ -526,9 +526,10 @@ section.buttons {
   margin-bottom: 1rem;
 }
 
-svg * {
-  fill: red;
+.lead {
+  margin-top: 5rem;
 }
+
   /*
     sobald content oben anschlägt, kriegt er die Klasse «got-to-top» und wird absolut positioniert.
   */
