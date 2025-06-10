@@ -40,8 +40,9 @@ aside#rodeo-pic {
   height: var(--rodeo-pic-height);
   /* background: url(/assets/img/rodeo.jpg); */
   /* background: url(/assets/im/logog/Key_graphic_rodeo.jpg); */
-  background: url(/assets/img/Schema.svg);
-  background-size: contain;
+  /* background: url(/assets/img/Schema.svg); */
+  background: url(/assets/img/High_KV_graphic_rodeo.png);
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: black;
@@ -483,7 +484,11 @@ aside#desktop-nothing {
     left: auto;
     margin: 0 auto; /* Greift aus unerklärlichen gründen nicht. */
     /* left: 20vw; */
+    background: url(/assets/img/Wide_KV_graphic_rodeo.png);
+    background-size: cover;
+    background-position: center center;
   }
+
   div#content {
     /* background: black; */
   }
